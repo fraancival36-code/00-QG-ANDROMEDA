@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🌌 QG ANDRÔMEDA — Portal Principal</title>
+    <meta name="theme-color" content="#0099FF">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #010515 0%, #081840 50%, #102860 100%);
+            font-family: 'Segoe UI', sans-serif;
+            color: #FFFFFF;
+            padding: 14px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px;
+            margin-bottom: 22px;
+            border-bottom: 2px solid rgba(0,150,255,0.25);
+        }
+        h1 {
+            font-size: 26px;
+            background: linear-gradient(90deg, #00CCFF, #0066FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 4px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #77BBEE;
+        }
+        .status {
+            background: rgba(0,100,180,0.12);
+            border: 1px solid rgba(0,150,255,0.25);
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #99CCEE;
+            margin-bottom: 20px;
+        }
+        .grupo-titulo {
+            color: #88BBEE;
+            font-size: 12px;
+            margin: 18px 0 8px 4px;
+            padding-left: 8px;
+            border-left: 3px solid #0099FF;
+        }
+        .botao {
+            display: block;
+            text-decoration: none;
+            padding: 13px 16px;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.2s;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .botao:hover { transform: scale(1.015); opacity: 0.95; }
+
+        /* Cores por Área */
+        .manifesto   { background: linear-gradient(90deg, #225588, #3388BB); }
+        .constituica { background: linear-gradient(90deg, #224488, #4477BB); }
+        .arquitetura{ background: linear-gradient(90deg, #226644, #44AA77); }
+        .nucleo     { background: linear-gradient(90deg, #443388, #7755CC); }
+        .comando    { background: linear-gradient(90deg, #663377, #AA5599); }
+        .biblioteca { background: linear-gradient(90deg, #885522, #BB8844); }
+        .laboratorio{ background: linear-gradient(90deg, #772244, #AA4466); }
+        .missoes    { background: linear-gradient(90deg, #225577, #4499BB); }
+        .projetos   { background: linear-gradient(90deg, #554422, #887733); }
+        .seguranca  { background: linear-gradient(90deg, #334455, #6688AA); }
+        .docs       { background: linear-gradient(90deg, #225555, #449988); }
+        .expansao   { background: linear-gradient(90deg, #444466, #7777AA); }
+
+        .rodape {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(0,120,200,0.2);
+            color: #4477AA;
+            font-size: 11px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🌌 QG ANDRÔMEDA</h1>
+        <p class="subtitulo">CENTRO DE COMANDO PRINCIPAL · Portal Oficial — Versão 1.0</p>
+    </div>
+
+    <div class="status">
+        ✅ SISTEMA ATIVO · Fundação em construção · Passo a passo, sempre avançando
+    </div>
+
+    <!-- 📜 FUNDAÇÃO -->
+    <div class="grupo-titulo">📜 FUNDAÇÃO DO SISTEMA</div>
+    <a href="01-MANIFESTO/manifesto-andromeda.html" class="botao manifesto">💙 01 · Manifesto — Identidade e Propósito</a>
+    <a href="02-CONSTITUICAO/constituicao-v1.0.html" class="botao constituica">⚖️ 02 · Constituição — Lei Maior</a>
+    <a href="03-ARQUITETURA-DA-RAIZ/mapa-geral.html" class="botao arquitetura">🗺️ 03 · Arquitetura — Mapa Geral</a>
+
+    <!-- 🧠 CÉREBRO -->
+    <div class="grupo-titulo">🧠 NÚCLEO INTELIGENTE</div>
+    <a href="04-NUCLEO-ANDROMEDA/inteligencia.html" class="botao nucleo">🧠 04 · Núcleo Andrômeda</a>
+
+    <!-- 🎛️ CENTRO DE COMANDO -->
+    <div class="grupo-titulo">🎛️ CENTRO DE COMANDO</div>
+    <a href="05-CENTRO-DE-COMANDO/dashboard.html" class="botao comando">🎛️ 05 · Painel de Comando</a>
+
+    <!-- 📚 ÁREAS DE CONHECIMENTO -->
+    <div class="grupo-titulo">📚 ÁREAS DE TRABALHO</div>
+    <a href="06-BIBLIOTECA/livros.html" class="botao biblioteca">📖 06 · Biblioteca</a>
+    <a href="07-LABORATORIO/ideias.html" class="botao laboratorio">🧪 07 · Laboratório</a>
+    <a href="08-MISSOES-E-TAREFAS/planejamento.html" class="botao missoes">🎯 08 · Missões e Tarefas</a>
+    <a href="09-PROJETOS/mobilidade.html" class="botao projetos">🚀 09 · Projetos</a>
+
+    <!-- 🔐 SUPORTE E SEGURANÇA -->
+    <div class="grupo-titulo">🔐 SISTEMA E SEGURANÇA</div>
+    <a href="11-SEGURANCA/regras.html" class="botao seguranca">🛡️ 11 · Segurança</a>
+    <a href="12-DOCUMENTACAO/manuais.html" class="botao docs">📁 12 · Documentação</a>
+    <a href="13-EXPANSAO-FUTURA/novos-modulos.html" class="botao expansao">🔭 13 · Expansão Futura</a>
+
+    <div class="rodape">
+        🌌 QG ANDRÔMEDA — Portal Principal · Versão 1.0<br>
+        "Nada nasce solto. Tudo tem lugar. Tudo tem número. Tudo tem registro."<br>
+        <br>
+        Criado por Francival Alves Farias — 03 de agosto de 2026
+    </div>
+
+</div>
+
+</body>
+</html>

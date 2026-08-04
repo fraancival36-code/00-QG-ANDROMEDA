@@ -3,90 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🌌 QG ANDRÔMEDA — Portal Principal</title>
-    <meta name="theme-color" content="#0099FF">
+    <title>🌌 RAIZ — QG Andrômeda</title>
+    <meta name="theme-color" content="#0088FF">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
             min-height: 100vh;
-            background: linear-gradient(180deg, #010515 0%, #081840 50%, #102860 100%);
-            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(180deg, #010410 0%, #081C44 50%, #0F2C70 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
             color: #FFFFFF;
-            padding: 14px;
+            padding: 12px;
         }
         .caixa { max-width: 600px; margin: 0 auto; }
 
         .cabecalho {
             text-align: center;
-            padding: 20px 14px;
-            margin-bottom: 22px;
-            border-bottom: 2px solid rgba(0,150,255,0.25);
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(0,140,255,0.28);
         }
         h1 {
             font-size: 26px;
-            background: linear-gradient(90deg, #00CCFF, #0066FF);
+            background: linear-gradient(90deg, #00CCFF, #0066FF, #4400FF);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
-        .subtitulo {
-            font-size: 13px;
-            color: #77BBEE;
-        }
-        .status {
-            background: rgba(0,100,180,0.12);
-            border: 1px solid rgba(0,150,255,0.25);
-            border-radius: 10px;
-            padding: 10px;
-            text-align: center;
-            font-size: 13px;
-            color: #99CCEE;
-            margin-bottom: 20px;
-        }
-        .grupo-titulo {
-            color: #88BBEE;
+        .dados-sistema {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px 10px;
             font-size: 12px;
-            margin: 18px 0 8px 4px;
-            padding-left: 8px;
-            border-left: 3px solid #0099FF;
+            color: #88BBEE;
+            background: rgba(0,80,150,0.12);
+            border: 1px solid rgba(0,150,255,0.22);
+            border-radius: 10px;
+            padding: 10px 14px;
+            margin-bottom: 16px;
         }
+        .dados-sistema span { color: #AADDFF; font-weight: 600; }
+
+        .grupo-nome {
+            font-size: 12px;
+            color: #77AAEE;
+            margin: 18px 0 8px 4px;
+            padding-left: 10px;
+            border-left: 3px solid #0099FF;
+            font-weight: 600;
+        }
+
         .botao {
             display: block;
             text-decoration: none;
-            padding: 13px 16px;
-            margin-bottom: 8px;
+            padding: 12px 15px;
+            margin-bottom: 7px;
             border-radius: 12px;
-            font-size: 15px;
+            font-size: 14.5px;
             font-weight: 500;
-            transition: 0.2s;
+            color: #FFFFFF;
+            transition: transform 0.15s, opacity 0.15s;
             border: none;
             cursor: pointer;
-            color: white;
         }
-        .botao:hover { transform: scale(1.015); opacity: 0.95; }
+        .botao:active { transform: scale(0.98); }
 
-        /* Cores por Área */
-        .manifesto   { background: linear-gradient(90deg, #225588, #3388BB); }
-        .constituica { background: linear-gradient(90deg, #224488, #4477BB); }
-        .arquitetura{ background: linear-gradient(90deg, #226644, #44AA77); }
-        .nucleo     { background: linear-gradient(90deg, #443388, #7755CC); }
-        .comando    { background: linear-gradient(90deg, #663377, #AA5599); }
-        .biblioteca { background: linear-gradient(90deg, #885522, #BB8844); }
-        .laboratorio{ background: linear-gradient(90deg, #772244, #AA4466); }
-        .missoes    { background: linear-gradient(90deg, #225577, #4499BB); }
-        .projetos   { background: linear-gradient(90deg, #554422, #887733); }
-        .seguranca  { background: linear-gradient(90deg, #334455, #6688AA); }
-        .docs       { background: linear-gradient(90deg, #225555, #449988); }
-        .expansao   { background: linear-gradient(90deg, #444466, #7777AA); }
+        /* Cores por Grupo */
+        .f0  { background: linear-gradient(90deg, #225599, #3388CC); }
+        .f1  { background: linear-gradient(90deg, #224488, #4477BB); }
+        .f2  { background: linear-gradient(90deg, #226655, #44AA88); }
+        .f3  { background: linear-gradient(90deg, #443388, #7755CC); }
+        .f4  { background: linear-gradient(90deg, #663377, #AA5599); }
+        .f5  { background: linear-gradient(90deg, #774422, #BB7744); }
+        .f6  { background: linear-gradient(90deg, #772244, #AA4466); }
+        .f7  { background: linear-gradient(90deg, #226677, #44AABB); }
+        .f8  { background: linear-gradient(90deg, #554422, #887733); }
+        .f9  { background: linear-gradient(90deg, #336644, #55AA77); }
+        .f10 { background: linear-gradient(90deg, #334466, #6688AA); }
+        .f11 { background: linear-gradient(90deg, #335555, #559988); }
+        .f12 { background: linear-gradient(90deg, #445577, #7799BB); }
+        .f13 { background: linear-gradient(90deg, #553366, #8855AA); }
+        .f14 { background: linear-gradient(90deg, #225566, #4499AA); }
+        .f15 { background: linear-gradient(90deg, #664433, #AA7755); }
+        .f16 { background: linear-gradient(90deg, #446644, #77AA66); }
+        .f17 { background: linear-gradient(90deg, #552244, #884477); }
+        .f18 { background: linear-gradient(90deg, #444466, #7777AA); }
+        .f19 { background: linear-gradient(90deg, #335588, #6699CC); }
+        .f20 { background: linear-gradient(90deg, #223366, #4466BB); }
 
         .rodape {
             text-align: center;
-            margin-top: 30px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(0,120,200,0.2);
+            margin-top: 28px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(0,120,200,0.18);
             color: #4477AA;
             font-size: 11px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
     </style>
 </head>
@@ -95,46 +106,82 @@
 <div class="caixa">
 
     <div class="cabecalho">
-        <h1>🌌 QG ANDRÔMEDA</h1>
-        <p class="subtitulo">CENTRO DE COMANDO PRINCIPAL · Portal Oficial — Versão 1.0</p>
+        <h1>🌌 RAIZ — QG ANDRÔMEDA</h1>
     </div>
 
-    <div class="status">
-        ✅ SISTEMA ATIVO · Fundação em construção · Passo a passo, sempre avançando
+    <div class="dados-sistema">
+        <span>Versão:</span> 1.0
+        <span>Status:</span> 🚧 Em Construção
+        <span>Atualização:</span> 04/08/2026
+        <span>Módulos:</span> 20 definidos · 0 ativos
     </div>
 
-    <!-- 📜 FUNDAÇÃO -->
-    <div class="grupo-titulo">📜 FUNDAÇÃO DO SISTEMA</div>
-    <a href="01-MANIFESTO/manifesto-andromeda.html" class="botao manifesto">💙 01 · Manifesto — Identidade e Propósito</a>
-    <a href="02-CONSTITUICAO/constituicao-v1.0.html" class="botao constituica">⚖️ 02 · Constituição — Lei Maior</a>
-    <a href="03-ARQUITETURA-DA-RAIZ/mapa-geral.html" class="botao arquitetura">🗺️ 03 · Arquitetura — Mapa Geral</a>
+    <!-- ====================================== -->
+    <!-- 🏛️ FUNDAÇÃO — As Leis e a Planta -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🏛️ FUNDAÇÃO — Leis e Planta do Sistema</div>
+    <a href="01-MANIFESTO/manifesto-andromeda.html" class="botao f0">💙 01 · MANIFESTO — Identidade e Propósito</a>
+    <a href="02-CONSTITUICAO/constituicao-v1.0.html" class="botao f1">⚖️ 02 · CONSTITUIÇÃO — Lei Maior do Sistema</a>
+    <a href="03-ARQUITETURA-DA-RAIZ/mapa-geral.html" class="botao f2">🗺️ 03 · ARQUITETURA — Planta e Ligações</a>
 
-    <!-- 🧠 CÉREBRO -->
-    <div class="grupo-titulo">🧠 NÚCLEO INTELIGENTE</div>
-    <a href="04-NUCLEO-ANDROMEDA/inteligencia.html" class="botao nucleo">🧠 04 · Núcleo Andrômeda</a>
+    <!-- ====================================== -->
+    <!-- 🧠 NÚCLEO E COMANDO -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🧠 NÚCLEO E COMANDO — Cérebro e Interface</div>
+    <a href="04-NUCLEO-ANDROMEDA/inteligencia.html" class="botao f3">🧠 04 · NÚCLEO ANDRÔMEDA — Cérebro e Memória</a>
+    <a href="05-CENTRO-DE-COMANDO/dashboard.html" class="botao f4">🎛️ 05 · CENTRO DE COMANDO — Painel e Controle</a>
 
-    <!-- 🎛️ CENTRO DE COMANDO -->
-    <div class="grupo-titulo">🎛️ CENTRO DE COMANDO</div>
-    <a href="05-CENTRO-DE-COMANDO/dashboard.html" class="botao comando">🎛️ 05 · Painel de Comando</a>
+    <!-- ====================================== -->
+    <!-- 📚 CONHECIMENTO E LIGAÇÕES -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">📚 CONHECIMENTO — Saber, Estoque e Conexões</div>
+    <a href="06-BIBLIOTECA/deposito-geral.html" class="botao f5">📖 06 · BIBLIOTECA — Livros e 📦 DEPÓSITO-GERAL</a>
+    <a href="07-LABORATORIO/testes.html" class="botao f6">🧪 07 · LABORATÓRIO — Experimentos</a>
+    <a href="08-SISTEMA-DE-LIGACOES/mapa-conexoes.html" class="botao f7">🔗 08 · LIGAÇÕES — Conexões entre Peças</a>
 
-    <!-- 📚 ÁREAS DE CONHECIMENTO -->
-    <div class="grupo-titulo">📚 ÁREAS DE TRABALHO</div>
-    <a href="06-BIBLIOTECA/livros.html" class="botao biblioteca">📖 06 · Biblioteca</a>
-    <a href="07-LABORATORIO/ideias.html" class="botao laboratorio">🧪 07 · Laboratório</a>
-    <a href="08-MISSOES-E-TAREFAS/planejamento.html" class="botao missoes">🎯 08 · Missões e Tarefas</a>
-    <a href="09-PROJETOS/mobilidade.html" class="botao projetos">🚀 09 · Projetos</a>
+    <!-- ====================================== -->
+    <!-- 🚀 PROJETOS -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🚀 PROJETOS — Obras em Construção</div>
+    <a href="09-PROJETOS/index.html" class="botao f8">🏗️ 09 · PROJETOS — Trabalhos em Desenvolvimento</a>
 
-    <!-- 🔐 SUPORTE E SEGURANÇA -->
-    <div class="grupo-titulo">🔐 SISTEMA E SEGURANÇA</div>
-    <a href="11-SEGURANCA/regras.html" class="botao seguranca">🛡️ 11 · Segurança</a>
-    <a href="12-DOCUMENTACAO/manuais.html" class="botao docs">📁 12 · Documentação</a>
-    <a href="13-EXPANSAO-FUTURA/novos-modulos.html" class="botao expansao">🔭 13 · Expansão Futura</a>
+    <!-- ====================================== -->
+    <!-- 🎓 GOVERNANÇA -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🎓 GOVERNANÇA — Ensino, Segurança e Registro</div>
+    <a href="10-CURSOS-E-TREINAMENTO/aulas.html" class="botao f9">📚 10 · CURSOS — Ensino e Treinamento</a>
+    <a href="11-SEGURANCA/regras.html" class="botao f10">🛡️ 11 · SEGURANÇA — Proteção e Permissões</a>
+    <a href="12-DOCUMENTACAO/manuais.html" class="botao f11">📁 12 · DOCUMENTAÇÃO — Manuais e Histórico</a>
+
+    <!-- ====================================== -->
+    <!-- 🔧 INFRAESTRUTURA -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🔧 INFRAESTRUTURA — Motor e Suporte</div>
+    <a href="13-REPOSITORIO/codigo.html" class="botao f12">📂 13 · REPOSITÓRIO — Código e Versões</a>
+    <a href="14-IA-E-AGENTES/equipe.html" class="botao f13">🤖 14 · IA E AGENTES — Equipe de IAs</a>
+    <a href="15-API-E-INTEGRACOES/conexoes.html" class="botao f14">🔌 15 · APIs — Conexões Externas</a>
+    <a href="16-PAINEL-DO-SISTEMA/status.html" class="botao f15">📊 16 · PAINEL — Sistema e Recursos</a>
+    <a href="17-BACKUP-E-RECUPERACAO/snapshots.html" class="botao f16">💾 17 · BACKUP — Proteção e Restauração</a>
+
+    <!-- ====================================== -->
+    <!-- 🧠 INTELIGÊNCIA E CONFIGURAÇÃO -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">⚙️ INTELIGÊNCIA — Ajustes e Aprendizado</div>
+    <a href="18-CONFIGURACAO/preferencias.html" class="botao f17">⚙️ 18 · CONFIGURAÇÕES — Tema, Idioma, Chaves</a>
+    <a href="19-CONHECIMENTO-DA-IA/memoria.html" class="botao f18">🧠 19 · CONHECIMENTO DA IA — Memória e Aprendizado</a>
+
+    <!-- ====================================== -->
+    <!-- 🌍 UNIVERSO — EXPANSÃO INFINITA -->
+    <!-- ====================================== -->
+    <div class="grupo-nome">🌍 UNIVERSO — Expansão Infinita</div>
+    <a href="20-UNIVERSO-ANDROMEDA/index.html" class="botao f19">🌌 20 · UNIVERSO ANDRÔMEDA — Todos os Projetos</a>
 
     <div class="rodape">
-        🌌 QG ANDRÔMEDA — Portal Principal · Versão 1.0<br>
-        "Nada nasce solto. Tudo tem lugar. Tudo tem número. Tudo tem registro."<br>
+        🌌 RAIZ DO QG ANDRÔMEDA — Portal Principal · Versão 1.0<br>
+        "Da Raiz nascem os galhos. Dos galhos vem o conhecimento. Tudo volta à origem."<br>
         <br>
-        Criado por Francival Alves Farias — 03 de agosto de 2026
+        Criado por Francival Alves Farias — 04 de agosto de 2026<br>
+        <em>Construindo com ordem. Um de cada vez. Sempre pra frente.</em>
     </div>
 
 </div>

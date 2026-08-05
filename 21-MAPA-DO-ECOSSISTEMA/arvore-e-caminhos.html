@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🗺️ 21 · MAPA DO ECOSSISTEMA — QG Andrômeda</title>
+    <meta name="theme-color" content="#337755">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #08140C 0%, #183828 50%, #285840 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(100,200,150,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #99EEBB, #55DD99, #33BB77);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #AAEED0;
+        }
+
+        .caixa-voz {
+            background: rgba(40,100,70,0.15);
+            border: 1px solid rgba(100,200,150,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #228855, #33AA66); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #AAEED0;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,70,50,0.12);
+            border: 1px solid rgba(100,200,150,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 14px;
+            color: #E0FFF0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88EEBB;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(100,200,150,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+
+        .codigo {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            background: rgba(0,0,0,0.40);
+            padding: 14px;
+            border-radius: 8px;
+            margin: 10px 0;
+            color: #90F0C0;
+            line-height: 1.6;
+            white-space: pre-wrap;
+        }
+        .raiz { color: #FFFF66; font-weight: bold; }
+        .pasta { color: #88DDFF; }
+        .arquivo { color: #99EEBB; }
+        .futuro { color: #FFAA66; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(100,200,150,0.15);
+            color: #AAEED0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #226644, #338855);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🗺️ MAPA COMPLETO DO ECOSSISTEMA</h1>
+        <p class="subtitulo">A Árvore da Andrômeda · Onde cada coisa fica · Caminhos de Ida e Volta · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerMapa()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-mapa">
+
+        <h2>🌳 A ÁRVORE DA ANDRÔMEDA</h2>
+
+        <p>Este é o mapa oficial de tudo o que existe e o que ainda vai nascer. Antes de criar qualquer página nova, consulta-se este Mapa. Nada sai do lugar. Nada se perde.</p>
+
+        <div class="codigo">
+<span class="raiz">🌌 RAIZ — index.html</span>
+│
+├── 01 — CONSTITUIÇÃO
+│   └── constituicao.html
+│
+├── 02 — MANIFESTO E PRINCÍPIOS
+│   └── manifesto.html
+│
+├── 03 — MAPA DO ECOSSISTEMA ← VOCÊ ESTÁ AQUI
+│   └── arvore-e-caminhos.html
+│
+├── 04 — NÚCLEO ANDRÔMEDA
+│   ├── memoria.html
+│   ├── identidade.html
+│   └── inteligencia.html
+│
+├── 05 — BIBLIOTECA
+│   ├── livros.html
+│   ├── documentos.html
+│   └── obras.html
+│
+├── 06 — LABORATÓRIO
+│   ├── codigos.html
+│   ├── testes.html
+│   └── ferramentas.html
+│
+├── 07 — FERRAMENTAS
+│   ├── conversor-epub.html
+│   ├── gerador-voz.html
+│   └── gerador-video.html
+│
+├── 08 — PROJETOS
+│   ├── em-desenvolvimento.html
+│   ├── concluidos.html
+│   └── planejados.html
+│
+├── 09 — CURSOS E ENSINO
+│   ├── materiais.html
+│   └── apostilas.html
+│
+├── 10 — SEGURANÇA E PROTEÇÃO
+│   ├── direitos.html
+│   └── guarda.html
+│
+├── 11 — MÓDULO MOBILIDADE / PARCEIRO
+│   ├── mapa.html
+│   ├── rotas.html
+│   └── motorista.html
+│
+├── 12 — MÓDULO INDÚSTRIA
+│   ├── estoque.html
+│   └── fiscal.html
+│
+├── 13 — HISTÓRICO E MEMÓRIA
+│   └── caminho-percorrido.html
+│
+├── 14 — SOBRE E CONTATO
+│   └── apresentacao.html
+│
+├── 15 — ARQUIVO E RESERVA
+│   └── guardado.html
+│
+├── 16 — MANUAL DE USO
+│   └── orientacao.html
+│
+├── 17 — GLOSSÁRIO
+│   └── significados.html
+│
+├── 18 — FUTURO E VISÃO
+│   └── por-vir.html
+│
+├── 19 — DIÁRIO DE BORDO
+│   └── cada-dia.html
+│
+├── 20 — PRINCÍPIOS E VALORES
+│   └── alma-e-caminho.html
+│
+└── <span class="futuro">... E CRESCENDO SEMPRE</span>
+        </div>
+
+        <h2>📐 REGRAS DO MAPA</h2>
+
+        <p>✅ <strong>Número define a ordem.</strong> Não se muda número de página existente.</p>
+        <p>✅ <strong>Uma pasta, uma função.</strong> Cada pasta tem seu propósito claro.</p>
+        <p>✅ <strong>Sempre volta à Raiz.</strong> Toda página tem botão de retorno.</p>
+        <p>✅ <strong>Novo item = novo número.</strong> Acrescenta-se no final, sem bagunçar o que já existe.</p>
+
+        <h2>🔄 COMO NAVEGAR</h2>
+
+        <p>Raiz → Escolhe o número → Entra na pasta → Lê a página → Volta à Raiz → Escolhe outra → Sempre.</p>
+
+        <div class="assinatura">
+            "Com o Mapa na mão, nunca se perde. Com a ordem firme, sempre se encontra."<br><br>
+            — Mapa Completo do Ecossistema · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerMapa() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-mapa').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

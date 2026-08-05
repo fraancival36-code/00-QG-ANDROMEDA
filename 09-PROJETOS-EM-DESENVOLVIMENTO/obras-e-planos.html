@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🚀 09 · PROJETOS — QG Andrômeda</title>
+    <meta name="theme-color" content="#CC6622">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #100804 0%, #382010 50%, #583018 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(255,140,60,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #FFAA66, #EE8844, #CC6622);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #FFCC99;
+        }
+
+        .caixa-voz {
+            background: rgba(120,70,30,0.15);
+            border: 1px solid rgba(255,140,60,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #CC6622, #EE8833); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #FFCC99;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(100,50,20,0.12);
+            border: 1px solid rgba(255,140,60,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #FFF2E0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #FFBB88;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255,140,60,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .projeto {
+            background: rgba(140,80,30,0.10);
+            border-left: 3px solid #FF8833;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .projeto h3 {
+            font-size: 15px;
+            color: #FFCC88;
+            margin-bottom: 6px;
+        }
+        .barra {
+            height: 8px;
+            background: rgba(0,0,0,0.25);
+            border-radius: 4px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+        .progresso {
+            height: 100%;
+            background: linear-gradient(90deg, #FF8833, #FFAA44);
+            border-radius: 4px;
+        }
+        .info { font-size: 13px; color: #E0C090; margin-top: 4px; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,140,60,0.15);
+            color: #FFCC99;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #774422, #995533);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🚀 PROJETOS EM DESENVOLVIMENTO</h1>
+        <p class="subtitulo">Obras em construção · Planos em andamento · Crescimento contínuo · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerProjetos()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-projetos">
+
+        <h2>O QUE SÃO OS PROJETOS</h2>
+
+        <p>Aqui ficam todos os trabalhos que estão sendo construídos. Cada projeto tem seu nome, seu estado, seu progresso e sua meta. Do planejamento até a conclusão — tudo registrado.</p>
+
+        <h2>📋 PROJETOS ATIVOS</h2>
+
+        <div class="projeto">
+            <h3>🌌 QG ANDRÔMEDA — Raiz e Arquitetura</h3>
+            <p>Construção da base, pastas, páginas, leis e estrutura completa do sistema.</p>
+            <div class="barra"><div class="progresso" style="width: 45%"></div></div>
+            <div class="info">📊 45% Concluído · 📅 Início: 04/08/2026 · 👑 Prioridade Máxima</div>
+        </div>
+
+        <div class="projeto">
+            <h3>📚 BIBLIOTECA — Livros e Obras</h3>
+            <p>Organização, escrita e publicação de livros, documentos e materiais.</p>
+            <div class="barra"><div class="progresso" style="width: 30%"></div></div>
+            <div class="info">📊 30% Concluído · 📅 Início: 05/08/2026 · 📖 Em Andamento</div>
+        </div>
+
+        <div class="projeto">
+            <h3>🔧 FERRAMENTAS — Conversor e Criador</h3>
+            <p>Aplicativos de conversão de formatos, geração de conteúdo e automação.</p>
+            <div class="barra"><div class="progresso" style="width: 15%"></div></div>
+            <div class="info">📊 15% Concluído · 📅 Início: 05/08/2026 · 🔨 Em Construção</div>
+        </div>
+
+        <div class="projeto">
+            <h3>🚚 PARCEIRO — Mobilidade e Transporte</h3>
+            <p>Sistema de apoio a motoristas, rotas, segurança e colaboração.</p>
+            <div class="barra"><div class="progresso" style="width: 10%"></div></div>
+            <div class="info">📊 10% Concluído · 📅 Planejamento · ⏳ Aguardando</div>
+        </div>
+
+        <h2>📐 REGRAS DOS PROJETOS</h2>
+
+        <p>✅ <strong>Um de cada vez.</strong> Conclui-se uma etapa, depois avança.</p>
+        <p>✅ <strong>Sempre registrado.</strong> Data, progresso, responsável e meta.</p>
+        <p>✅ <strong>Do planejamento à entrega.</strong> Nasce aqui → cresce → vai pra Biblioteca.</p>
+        <p>✅ <strong>Nenhum projeto é abandonado.</strong> Se parou, fica registrado. Quando retomar, sabe de onde parou.</p>
+
+        <h2>🔄 O CAMINHO DO PROJETO</h2>
+
+        <p>Ideia → Planejamento → Registro aqui → Desenvolvimento → Teste → Aprovação → Biblioteca → Pronto para sempre.</p>
+
+        <div class="assinatura">
+            "Cada projeto é uma semente plantada. Aqui se cuida, aqui se cresce. Um dia se torna obra."<br><br>
+            — Projetos em Desenvolvimento · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerProjetos() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-projetos').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

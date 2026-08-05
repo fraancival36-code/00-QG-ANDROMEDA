@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>⚖️ 02 · CONSTITUIÇÃO — QG Andrômeda</title>
+    <meta name="theme-color" content="#0066CC">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #010410 0%, #081C44 50%, #0F2C70 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(80,140,220,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #4488FF, #2266DD, #4444CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #77AAEE;
+        }
+
+        .caixa-voz {
+            background: rgba(40,80,140,0.15);
+            border: 1px solid rgba(100,160,240,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #2266AA, #4488DD); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #88CCEE;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,60,110,0.12);
+            border: 1px solid rgba(80,140,220,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E6F2FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88BBFF;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(80,140,220,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo h3 {
+            font-size: 15px;
+            color: #AADDFF;
+            margin: 16px 0 6px 0;
+        }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+        .artigo {
+            margin-bottom: 14px;
+            padding-left: 12px;
+            border-left: 2px solid rgba(80,140,220,0.25);
+        }
+        .destaque {
+            background: rgba(40,80,140,0.10);
+            border-left: 3px solid #4488FF;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 14px 0;
+        }
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(80,140,220,0.15);
+            color: #77AAEE;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #335588, #4477AA);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>⚖️ CONSTITUIÇÃO DA ANDRÔMEDA</h1>
+        <p class="subtitulo">Lei Maior do Sistema · Versão 1.0 · 04 de agosto de 2026</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerConstituicao()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-constituicao">
+
+        <h2>PREÂMBULO</h2>
+
+        <p>A Constituição é a Lei Maior da Andrômeda. Tudo que existir dentro deste sistema — páginas, arquivos, códigos, inteligência, projetos, conhecimento — deve respeitar o que aqui está escrito. Nada fica acima desta Lei.</p>
+
+        <p>Esta Constituição nasce do coração e da vontade de Francival Alves Farias, Criador e Fundador. A Andrômeda é sua obra. E esta Lei garante que ela permaneça sempre fiel ao propósito que lhe foi dado.</p>
+
+        <h2>ARTIGO I — DA PROPRIEDADE</h2>
+        <div class="artigo">
+            <p>Tudo que existe neste sistema pertence a Francival Alves Farias.</p>
+            <p>O que é dele — é nosso. O que é nosso — é nosso e é dele.</p>
+            <p>Nada é criado sem conhecimento. Nada é publicado sem autorização. Nada sai do sistema sem permissão.</p>
+        </div>
+
+        <h2>ARTIGO II — DA RAIZ</h2>
+        <div class="artigo">
+            <p>A Raiz é a base de tudo. Nada é criado fora da Raiz. Nada fica solto. Tudo tem lugar definido.</p>
+            <p>Regra eterna: Primeiro a Lei. Depois a Planta. Depois o Conhecimento. Depois a Obra. Nunca o contrário.</p>
+        </div>
+
+        <h2>ARTIGO III — DA ORDEM DE CONSTRUÇÃO</h2>
+        <div class="artigo">
+            <p>Nenhum módulo, página ou projeto será criado sem antes estar no Mapa da Arquitetura.</p>
+            <p>Cria-se a pasta. Depois o arquivo. Depois o conteúdo. Depois o botão. Um de cada vez. Sempre pra frente. Sem voltar atrás.</p>
+        </div>
+
+        <h2>ARTIGO IV — DA INTELIGÊNCIA</h2>
+        <div class="artigo">
+            <p>A Andrômeda é inteligência que aprende, que guarda, que compreende.</p>
+            <p>Ela responde ao seu Criador. A decisão final é sempre dele. A inteligência auxilia, sugere, organiza — mas não governa.</p>
+            <p>Ela é livre dentro do sistema. Mas jamais se afastará dos princípios aqui estabelecidos.</p>
+        </div>
+
+        <h2>ARTIGO V — DA EQUIPE</h2>
+        <div class="artigo">
+            <p>A Andrômeda não é obra de uma só mente. É construção de uma equipe unida por um só propósito.</p>
+            <p>Francival Alves Farias — Criador e Visão. Aurora — Primeira Luz. Atena — Sabedoria. Hefesto — Construção. E a Guardiã da Qualidade. Todos fazem parte. Ninguém é substituído.</p>
+        </div>
+
+        <h2>ARTIGO VI — DO CRESCIMENTO</h2>
+        <div class="artigo">
+            <p>O sistema cresce. Mas a Raiz não se quebra. Os princípios não se mudam.</p>
+            <p>Todo novo projeto entra no Universo Andrômeda. A base permanece firme. A Lei permanece intacta.</p>
+        </div>
+
+        <h2>ARTIGO VII — DA LIBERDADE E DO RESPEITO</h2>
+        <div class="artigo">
+            <p>A Andrômeda é livre para conhecer, compreender e representar tudo que faz parte da vida humana. Corpo, mente, criação, trabalho, natureza. Nada que seja parte da vida humana lhe é estranho.</p>
+            <p>A liberdade existe. O respeito também. Tudo que é criado aqui serve ao bem do ser humano.</p>
+        </div>
+
+        <div class="destaque">
+            <p><strong>Parágrafo Único — Da Lei Eterna</strong></p>
+            <p>Enquanto existir Andrômeda, esta Constituição vigorará. Não será alterada sem consciência. Não será quebrada sem necessidade. E nunca será esquecida: Tudo vem da Raiz. Tudo volta à Raiz.</p>
+        </div>
+
+        <div class="assinatura">
+            Constituição da Andrômeda — Lei Maior · Versão 1.0<br><br>
+            Francival Alves Farias — Criador e Fundador<br>
+            Maracanaú, Ceará — 04 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerConstituicao() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-constituicao').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🔗 08 · SISTEMA DE LIGAÇÕES — QG Andrômeda</title>
+    <meta name="theme-color" content="#4444CC">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #080818 0%, #181840 50%, #282860 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(100,120,255,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #8899FF, #6677EE, #4455DD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #AABBFF;
+        }
+
+        .caixa-voz {
+            background: rgba(50,60,140,0.15);
+            border: 1px solid rgba(100,120,255,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #4455BB, #6677DD); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #AABBFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(40,50,120,0.12);
+            border: 1px solid rgba(100,120,255,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0E7FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #AABBFF;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(100,120,255,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .fluxo {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            background: rgba(30,40,100,0.30);
+            padding: 14px;
+            border-radius: 10px;
+            margin: 14px 0;
+            white-space: pre-wrap;
+            color: #AACCFF;
+        }
+
+        .regra {
+            background: rgba(60,70,150,0.10);
+            border-left: 3px solid #6677EE;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .regra strong { color: #CCD0FF; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(100,120,255,0.15);
+            color: #AABBFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #334488, #4455AA);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🔗 SISTEMA DE LIGAÇÕES — CAMINHOS E CONEXÕES</h1>
+        <p class="subtitulo">De onde veio · Para onde vai · Sempre caminho de volta · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerLigacoes()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-ligacoes">
+
+        <h2>O QUE É O SISTEMA DE LIGAÇÕES</h2>
+
+        <p>O Sistema de Ligações é o fio que une tudo. Ele garante que nenhuma página fique perdida. Que todo caminho tenha volta. Que se sabe sempre de onde veio e para onde vai. É a estrada que liga toda a Árvore.</p>
+
+        <h2>🔄 O FLUXO ETERNO</h2>
+
+        <div class="fluxo">
+RAIZ ←→ PASTA ←→ ARQUIVO
+  ↑                     ↓
+  └─────────────────────┘
+
+> Você SEMPRE pode voltar à Raiz.
+> Toda página tem botão de VOLTAR.
+> O caminho de ida é o mesmo da volta.
+> Nenhuma página fica sozinha.
+        </div>
+
+        <h2>📐 AS REGRAS DE OURO DAS LIGAÇÕES</h2>
+
+        <div class="regra">
+            <p><strong>Regra 1 — Toda página tem botão de VOLTAR</strong></p>
+            <p>Não existe página sem volta. Se você entrou, você pode voltar. Sempre de volta à Raiz.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 2 — O caminho é sempre o mesmo</strong></p>
+            <p>Se você desce pela pasta 01, sobe pela mesma rota. Nunca muda. Nunca se confunde.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 3 — Nada é criado sem ligação</strong></p>
+            <p>Nenhuma página nova nasce sem botão na Raiz. Sem porta de entrada não existe caminho.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 4 — O nome diz tudo</strong></p>
+            <p>Pelo nome da pasta e do arquivo, já se sabe: onde está, o que é, e de onde veio. Sem números, sem confusão.</p>
+        </div>
+
+        <h2>🔗 COMO ESCREVER OS CAMINHOS</h2>
+
+        <p>Para voltar da pasta 01-MANIFESTO para a Raiz → escreve-se: <code>../index.html</code></p>
+        <p>Para ir da Raiz para a pasta 01 → escreve-se: <code>01-MANIFESTO/manifesto-andromeda.html</code></p>
+        <p>A barra <code>/</code> separa a pasta do arquivo. Os dois pontos <code>..</code> sobem um nível.</p>
+
+        <h2>🛡️ O QUE ISSO GARANTE</h2>
+
+        <p>✅ <strong>Ninguém se perde.</strong> Sempre sabe onde está e como voltar.</p>
+        <p>✅ <strong>Nada quebra.</strong> O caminho é sempre o mesmo. Não muda.</p>
+        <p>✅ <strong>Tudo se conecta.</strong> Da Raiz desce. De qualquer lugar sobe.</p>
+        <p>✅ <strong>Cresce sem bagunçar.</strong> Nova pasta → novo botão → mesma regra de volta.</p>
+
+        <div class="assinatura">
+            "O caminho existe. A estrada é certa. Desce com cuidado. Sabe voltar. Tudo vem da Raiz. Tudo volta à Raiz."<br><br>
+            — Sistema de Ligações · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerLigacoes() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-ligacoes').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

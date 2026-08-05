@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📦 15 · ARQUIVO E RESERVA — QG Andrômeda</title>
+    <meta name="theme-color" content="#666677">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0A0A0C 0%, #202028 50%, #303040 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(150,150,180,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #B0B0CC, #9099BB, #7077AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #B8B8D0;
+        }
+
+        .caixa-voz {
+            background: rgba(60,60,90,0.15);
+            border: 1px solid rgba(150,150,180,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #555588, #6666AA); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #B8B8D0;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(50,50,70,0.12);
+            border: 1px solid rgba(150,150,180,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0E0F0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #A8A8CC;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(150,150,180,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .bloco {
+            background: rgba(70,70,100,0.10);
+            border-left: 3px solid #8888BB;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .bloco h3 {
+            font-size: 15px;
+            color: #B0B0DD;
+            margin-bottom: 8px;
+        }
+        .item {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(150,150,180,0.12);
+            font-size: 14px;
+        }
+        .guardado { color: #88EE88; }
+        .reservado { color: #EEDD66; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(150,150,180,0.15);
+            color: #B8B8D0;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #444466, #555588);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📦 ARQUIVO E RESERVA — GUARDADO E PRESERVADO</h1>
+        <p class="subtitulo">O que está pronto · O que está guardado · O que será usado depois · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerArquivo()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-arquivo">
+
+        <h2>O QUE É O ARQUIVO</h2>
+
+        <p>O Arquivo é o lugar onde se guarda com segurança. Aqui ficam as obras concluídas, os materiais prontos, os registros e tudo que está preservado para o futuro. Não se apaga. Não se perde. Fica guardado.</p>
+
+        <h2>📂 O QUE ESTÁ GUARDADO</h2>
+
+        <div class="bloco">
+            <h3>✅ OBRAS PRONTAS E ARQUIVADAS</h3>
+            <div class="item"><span>Constituição da Andrômeda</span> <span class="guardado">✅ GUARDADO</span></div>
+            <div class="item"><span>Manifesto e Princípios</span> <span class="guardado">✅ GUARDADO</span></div>
+            <div class="item"><span>Arquitetura e Mapa da Raiz</span> <span class="guardado">✅ GUARDADO</span></div>
+            <div class="item"><span>Histórico e Memória</span> <span class="guardado">✅ GUARDADO</span></div>
+        </div>
+
+        <div class="bloco">
+            <h3>⏳ RESERVA — PARA USO FUTURO</h3>
+            <div class="item"><span>Projetos em planejamento</span> <span class="reservado">⏳ RESERVADO</span></div>
+            <div class="item"><span>Conhecimento e Biblioteca</span> <span class="reservado">⏳ RESERVADO</span></div>
+            <div class="item"><span>Ferramentas em construção</span> <span class="reservado">⏳ RESERVADO</span></div>
+            <div class="item"><span>Expansão e Crescimento</span> <span class="reservado">⏳ RESERVADO</span></div>
+        </div>
+
+        <h2>📐 REGRAS DO ARQUIVO</h2>
+
+        <p>✅ <strong>O que entra, fica guardado.</strong> Nada se apaga sem motivo forte.</p>
+        <p>✅ <strong>Só se retira com autorização.</strong> O que está arquivado, não se mexe sem ordem.</p>
+        <p>✅ <strong>Tem registro e data.</strong> Quando entrou, quem guardou, o que é.</p>
+        <p>✅ <strong>Segurança acima de tudo.</strong> O Arquivo protege o que pertence ao Criador.</p>
+
+        <h2>🔄 O CAMINHO</h2>
+
+        <p>Ideia → Trabalho → Conclusão → Arquivo → Guardado para sempre → Quando necessário, recupera-se.</p>
+
+        <div class="assinatura">
+            "O que se guarda bem, se encontra sempre. O que se preserva com cuidado, dura para sempre."<br><br>
+            — Arquivo e Reserva · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerArquivo() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-arquivo').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

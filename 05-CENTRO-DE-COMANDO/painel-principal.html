@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎛️ 05 · CENTRO DE COMANDO — QG Andrômeda</title>
+    <meta name="theme-color" content="#006688">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #020810 0%, #082840 50%, #0C3858 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(0,140,180,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #00CCEE, #00AACC, #0088AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #77DDEE;
+        }
+
+        .caixa-voz {
+            background: rgba(0,80,110,0.15);
+            border: 1px solid rgba(0,160,200,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #007799, #0099BB); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #88DDEE;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(0,60,90,0.12);
+            border: 1px solid rgba(0,140,180,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E6F8FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88DDEE;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(0,140,180,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .painel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 14px 0;
+        }
+        .bloco {
+            background: rgba(0,100,140,0.10);
+            border: 1px solid rgba(0,150,190,0.15);
+            border-radius: 10px;
+            padding: 12px;
+            text-align: center;
+        }
+        .bloco .icone { font-size: 22px; margin-bottom: 4px; }
+        .bloco .nome { font-size: 13px; color: #AAEEFF; }
+        .bloco .status { font-size: 12px; color: #88CCAA; margin-top: 4px; }
+
+        .funcao {
+            background: rgba(0,80,120,0.10);
+            border-left: 3px solid #00AACC;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(0,140,180,0.15);
+            color: #77DDEE;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #225566, #337788);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🎛️ CENTRO DE COMANDO — PAINEL PRINCIPAL</h1>
+        <p class="subtitulo">Olhos, mãos e voz do sistema · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerComando()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-comando">
+
+        <h2>O QUE É O CENTRO DE COMANDO</h2>
+
+        <p>O Centro de Comando é o painel onde tudo se vê. É a janela principal da Andrômeda. Aqui você vê o que está acontecendo, acessa cada área, dá ordens e recebe respostas. É o coração de onde o sistema é guiado.</p>
+
+        <h2>📊 PAINEL DE STATUS DO SISTEMA</h2>
+
+        <div class="painel">
+            <div class="bloco">
+                <div class="icone">🌐</div>
+                <div class="nome">Rede</div>
+                <div class="status">✅ Conectada</div>
+            </div>
+            <div class="bloco">
+                <div class="icone">🧠</div>
+                <div class="nome">Núcleo</div>
+                <div class="status">✅ Ativo</div>
+            </div>
+            <div class="bloco">
+                <div class="icone">💾</div>
+                <div class="nome">Memória</div>
+                <div class="status">✅ Carregada</div>
+            </div>
+            <div class="bloco">
+                <div class="icone">⚖️</div>
+                <div class="nome">Leis</div>
+                <div class="status">✅ Ativas</div>
+            </div>
+        </div>
+
+        <h2>🎯 AS FUNÇÕES DO PAINEL</h2>
+
+        <div class="funcao">
+            <p><strong>1 — VISÃO GERAL</strong></p>
+            <p>Mostra o estado de cada parte do sistema. Se está online, se está funcionando, se precisa de atenção. Tudo de um só lugar.</p>
+        </div>
+
+        <div class="funcao">
+            <p><strong>2 — ACESSO RÁPIDO</strong></p>
+            <p>Botões diretos pra cada área: Biblioteca, Laboratório, Projetos, Memória, Configurações. Sem precisar procurar.</p>
+        </div>
+
+        <div class="funcao">
+            <p><strong>3 — COMUNICAÇÃO DIRETA</strong></p>
+            <p>Fala com a Andrômeda diretamente daqui. Pergunta, dá ordens, pede ajuda. Ela responde. Tudo registrado.</p>
+        </div>
+
+        <div class="funcao">
+            <p><strong>4 — CONTROLE DE FLUXO</strong></p>
+            <p>Daqui você vai pra qualquer lugar. E de qualquer lugar, volta pra cá. É o ponto de encontro de todo o sistema.</p>
+        </div>
+
+        <h2>🔄 COMO FUNCIONA O FLUXO</h2>
+
+        <p>Da Raiz → entra no Centro de Comando → escolhe o caminho → vai até lá → faz o que precisa → volta ao Centro de Comando → volta à Raiz. Sempre com volta garantida. Sempre sabendo onde está.</p>
+
+        <h2>📐 PRINCÍPIOS DO PAINEL</h2>
+
+        <p>✅ <strong>Tudo à vista.</strong> Nada escondido. Tudo acessível.</p>
+        <p>✅ <strong>Um clique pra ir. Um clique pra voltar.</strong> Sempre caminho de volta.</p>
+        <p>✅ <strong>Simples e claro.</strong> Nada confuso. Tudo com nome e função.</p>
+        <p>✅ <strong>Obedece à Raiz.</strong> Este painel é janela, não é Lei. A Lei está na Raiz.</p>
+
+        <div class="assinatura">
+            "Da Raiz vem a ordem. Do Centro de Comando vem o controle. Tudo volta à origem."<br><br>
+            — Centro de Comando · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerComando() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-comando').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

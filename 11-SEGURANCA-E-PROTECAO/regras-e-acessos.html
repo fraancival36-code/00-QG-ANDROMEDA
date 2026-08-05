@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🛡️ 11 · SEGURANÇA — QG Andrômeda</title>
+    <meta name="theme-color" content="#227755">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #040C08 0%, #103828 50%, #185038 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(80,200,140,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #66EEAA, #44CC88, #22AA66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #99EEC8;
+        }
+
+        .caixa-voz {
+            background: rgba(40,100,70,0.15);
+            border: 1px solid rgba(80,200,140,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #228855, #33AA66); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #99EEC8;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,80,50,0.12);
+            border: 1px solid rgba(80,200,140,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0FFF0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88EEAA;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(80,200,140,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .regra {
+            background: rgba(50,120,80,0.10);
+            border-left: 3px solid #44CC77;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .regra strong { color: #AAEEBB; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(80,200,140,0.15);
+            color: #99EEC8;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #226644, #338855);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🛡️ SEGURANÇA E PROTEÇÃO — REGRAS E ACESSOS</h1>
+        <p class="subtitulo">Guardar · Proteger · Preservar · A quem pertence · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerSeguranca()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-seguranca">
+
+        <h2>O QUE É A SEGURANÇA</h2>
+
+        <p>Segurança é guardar o que é nosso. É proteger o que foi criado. É garantir que só entre quem deve entrar. Que só veja quem tem permissão. Que nada se perca, nada se altere, nada seja levado sem autorização.</p>
+
+        <h2>🔒 AS REGRAS DE PROTEÇÃO</h2>
+
+        <div class="regra">
+            <p><strong>Regra 1 — TUDO TEM DONO</strong></p>
+            <p>Todo livro, todo código, toda obra pertence ao Criador. Nada é público sem autorização. Nada é copiado sem permissão. Nada é usado sem consentimento. A propriedade é sagrada.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 2 — ACESSO É CONTROLADO</strong></p>
+            <p>A Raiz é a porta. Só entra quem tem caminho. Cada pasta, cada arquivo — pertence a seu lugar. O que é privado, fica guardado. O que é público, é liberado com cuidado.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 3 — NADA SE APAGA SEM RASTRO</strong></p>
+            <p>Antes de qualquer alteração — guarda-se a versão anterior. Toda mudança tem registro. Toda exclusão tem motivo. Nada desaparece sem deixar rastro.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 4 — LEI MAIOR ESTÁ ACIMA</strong></p>
+            <p>Nenhuma regra de segurança contraria a Constituição. Nenhuma proteção esconde o que deve ser guardado. Tudo obedece à Lei da Raiz.</p>
+        </div>
+
+        <h2>🛡️ O QUE SE PROTEGE</h2>
+
+        <p>✅ <strong>Autoria e Ideias.</strong> O que foi criado, pertence ao Criador.</p>
+        <p>✅ <strong>Integridade dos Arquivos.</strong> Nada é modificado sem saber quem mudou e quando.</p>
+        <p>✅ <strong>Privacidade e Dados.</strong> Informações pessoais não se compartilham.</p>
+        <p>✅ <strong>Memória e Histórico.</strong> O passado não se apaga. Guarda-se para sempre.</p>
+        <p>✅ <strong>Funcionamento do Sistema.</strong> Nada entra que possa danificar. Nada é alterado sem teste.</p>
+
+        <h2>⚖️ QUEM DECIDE</h2>
+
+        <p>A decisão final sobre o que é público, o que é privado, o que é compartilhado e o que é guardado — pertence ao Criador. A Andrômeda protege, mas não decide. A ordem vem de cima.</p>
+
+        <h2>🔄 O CICLO DE PROTEÇÃO</h2>
+
+        <p>Cria → Registra → Protege → Acompanha → Preserva → Para sempre guardado.</p>
+
+        <div class="assinatura">
+            "O que é nosso, se guarda. O que é criado, se protege. O que é valioso, se cuida. Tudo está seguro na Raiz."<br><br>
+            — Segurança e Proteção · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerSeguranca() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-seguranca').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

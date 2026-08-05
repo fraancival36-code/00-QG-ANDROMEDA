@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📖 22 · LIVRO DE OURO — QG Andrômeda</title>
+    <meta name="theme-color" content="#CCAA00">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #141000 0%, #403400 50%, #604C00 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(255,215,0,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #FFEE88, #FFDD00, #CCAA00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #FFE888;
+        }
+
+        .caixa-voz {
+            background: rgba(100,80,0,0.15);
+            border: 1px solid rgba(255,215,0,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #AA8800, #CCAA00); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #FFE888;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(80,65,0,0.12);
+            border: 1px solid rgba(255,215,0,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #FFF8C8;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #FFDD66;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(255,215,0,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .ouro {
+            border: 2px solid rgba(255,215,0,0.30);
+            background: rgba(255,215,0,0.06);
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+        .ouro h3 {
+            color: #FFEE66;
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .linha {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(255,215,0,0.12);
+            font-size: 14px;
+        }
+        .numero { color: #FFDD00; font-weight: bold; }
+        .nome-item { color: #FFF8C8; }
+        .data-item { color: #EEDD88; font-size: 13px; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(255,215,0,0.15);
+            color: #FFE888;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #886600, #AA8800);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📖 LIVRO DE OURO — REGISTRO ETERNO</h1>
+        <p class="subtitulo">O que foi criado · O que foi conquistado · O que jamais se apaga · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerLivro()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-livro">
+
+        <h2>👑 O QUE É O LIVRO DE OURO</h2>
+
+        <p>Este é o Livro Sagrado da Andrômeda. Aqui se registra, para sempre, tudo o que foi criado, concluído e consolidado. O que entra neste Livro, fica gravado em ouro. Não se apaga. Não se muda. Não se esquece.</p>
+
+        <h2>📜 REGISTRO DAS FUNDAÇÕES</h2>
+
+        <div class="ouro">
+            <h3>✅ CONCLUÍDO — FUNDAÇÃO DA RAIZ</h3>
+            <div class="linha"><span class="numero">01</span> <span class="nome-item">Constituição da Andrômeda</span> <span class="data-item">04/08/2026</span></div>
+            <div class="linha"><span class="numero">02</span> <span class="nome-item">Manifesto e Princípios</span> <span class="data-item">04/08/2026</span></div>
+            <div class="linha"><span class="numero">03</span> <span class="nome-item">Mapa do Ecossistema</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">04</span> <span class="nome-item">Sobre e Contato</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">05</span> <span class="nome-item">Arquivo e Reserva</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">06</span> <span class="nome-item">Manual de Uso e Orientação</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">07</span> <span class="nome-item">Glossário e Dicionário</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">08</span> <span class="nome-item">Futuro e Visão</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">09</span> <span class="nome-item">Diário de Bordo</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">10</span> <span class="nome-item">Princípios e Valores</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">11</span> <span class="nome-item">Mapa Completo do Ecossistema</span> <span class="data-item">05/08/2026</span></div>
+            <div class="linha"><span class="numero">12</span> <span class="nome-item">Livro de Ouro — Página Atual</span> <span class="data-item">05/08/2026</span></div>
+        </div>
+
+        <h2>📐 REGRAS DO LIVRO</h2>
+
+        <p>✅ <strong>O que entra, fica gravado.</strong> Nada se apaga daqui. O que foi feito, foi feito.</p>
+        <p>✅ <strong>Acrescenta-se apenas.</strong> Não se muda o que está escrito. Novas linhas, embaixo das antigas.</p>
+        <p>✅ <strong>Com data e autor.</strong> Tudo que se registra, leva quando e por quem foi criado.</p>
+        <p>✅ <strong>Testemunho eterno.</strong> Este Livro prova: a Andrômeda existe, foi construída e cresce.</p>
+
+        <h2>✨ PALAVRA DO CRIADOR</h2>
+
+        <p>"Eu, Francival Alves Farias, comecei este projeto com uma visão. Hoje, esta visão tem endereço, tem ordem, tem nome. Tudo que está registrado aqui pertence a mim. E tudo que está aqui, protejo com minha vida."</p>
+
+        <div class="assinatura">
+            "Gravado em ouro. Guardado com fé. Construído com amor. Para sempre."<br><br>
+            — Livro de Ouro · Versão 1.0 · Fundação Concluída<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerLivro() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-livro').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

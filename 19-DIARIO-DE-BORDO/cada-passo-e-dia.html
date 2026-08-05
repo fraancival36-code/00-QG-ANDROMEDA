@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📔 19 · DIÁRIO DE BORDO — QG Andrômeda</title>
+    <meta name="theme-color" content="#997733">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #100C04 0%, #382C10 50%, #584418 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(220,170,60,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #FFDD88, #EEC044, #CC9922);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #EEDDAA;
+        }
+
+        .caixa-voz {
+            background: rgba(100,70,20,0.15);
+            border: 1px solid rgba(220,170,60,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #AA7722, #CC9933); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #EEDDAA;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(80,55,15,0.12);
+            border: 1px solid rgba(200,150,50,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #FFF8E8;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #EEDD88;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(200,150,60,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .registro {
+            border-left: 2px solid #DDAA33;
+            padding-left: 12px;
+            margin: 14px 0;
+        }
+        .data { font-size: 13px; color: #EEC044; font-weight: bold; }
+        .texto { font-size: 14px; color: #FFF0C8; margin-top: 4px; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(220,170,60,0.15);
+            color: #EEDDAA;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #775511, #997722);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📔 DIÁRIO DE BORDO — CADA PASSO, CADA DIA</h1>
+        <p class="subtitulo">O que aconteceu · O que aprendemos · O que construímos · Registro diário · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerDiario()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-diario">
+
+        <h2>📖 O QUE É O DIÁRIO</h2>
+
+        <p>O Diário de Bordo é o coração do projeto. Aqui se registra cada dia de trabalho, cada descoberta, cada dificuldade superada e cada vitória. A Andrômeda não nasceu pronta. Ela está sendo construída passo a passo — e cada passo fica aqui guardado.</p>
+
+        <h2>📝 REGISTROS</h2>
+
+        <div class="registro">
+            <div class="data">04 de Agosto de 2026 — O INÍCIO DE TUDO</div>
+            <div class="texto">Nasce a ideia de organizar a Andrômeda. Depois de muito tentar e errar, descobrimos o caminho certo: primeiro se planeja, depois se constrói. Nasce a Constituição. Nasce o Manifesto. Tudo começa a fazer sentido.</div>
+        </div>
+
+        <div class="registro">
+            <div class="data">05 de Agosto de 2026 — A FUNDAÇÃO NASCEU</div>
+            <div class="texto">Hoje a Raiz foi criada. Pastas organizadas, numeradas, nomeadas. Cada página com seu lugar. Cada botão com seu caminho. Ida e volta garantidas. A base está firme. O projeto deixa de ser ideia e vira realidade.</div>
+        </div>
+
+        <div class="registro">
+            <div class="data">05 de Agosto de 2026 — A EQUIPE SE UNIU</div>
+            <div class="texto">Descobrimos que ninguém faz nada sozinho. Francival, Dola, Aurora, Hefesto, Atena. Todos com um propósito. Todos na mesma direção. A Andrômeda cresce porque a equipe cresce junto.</div>
+        </div>
+
+        <h2>📐 COMO ESCREVER AQUI</h2>
+
+        <p>✅ <strong>Todo dia de trabalho, uma linha nova.</strong> Data, o que fez, o que aprendeu.</p>
+        <p>✅ <strong>Escreve com verdade.</strong> O que deu certo, o que deu errado — tudo se registra.</p>
+        <p>✅ <strong>Escreve com orgulho do caminho.</strong> Cada passo vale, mesmo os pequenos.</p>
+        <p>✅ <strong>Para sempre fica.</strong> O Diário não se apaga. Se acrescenta. Cresce junto com a Andrômeda.</p>
+
+        <h2>🔄 O DIA DE AMANHÃ</h2>
+
+        <p>Amanhã continuamos. Uma página nova. Uma descoberta nova. Um passo adiante. O Diário estará aqui, esperando registrar tudo o que ainda vamos viver.</p>
+
+        <div class="assinatura">
+            "Cada dia é uma página nova. Cada página conta uma história. E a história está apenas começando."<br><br>
+            — Diário de Bordo · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerDiario() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-diario').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

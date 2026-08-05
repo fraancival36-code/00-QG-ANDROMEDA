@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📋 17 · GLOSSÁRIO — QG Andrômeda</title>
+    <meta name="theme-color" content="#7755AA">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0C0814 0%, #281840 50%, #402860 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(180,140,255,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #DDBBFF, #AA88EE, #8866DD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #CCBBFF;
+        }
+
+        .caixa-voz {
+            background: rgba(80,50,120,0.15);
+            border: 1px solid rgba(180,140,255,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #6644AA, #8866CC); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #CCBBFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(60,40,100,0.12);
+            border: 1px solid rgba(180,140,255,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #EDE4FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #BBAADD;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(180,140,255,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+
+        .termo {
+            background: rgba(90,60,140,0.10);
+            border-left: 3px solid #9977EE;
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 8px 0;
+        }
+        .nome { font-weight: bold; color: #DDBBFF; font-size: 15px; }
+        .significado { font-size: 14px; color: #D4CCF0; margin-top: 2px; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(180,140,255,0.15);
+            color: #CCBBFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #442277, #553399);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📋 GLOSSÁRIO E DICIONÁRIO</h1>
+        <p class="subtitulo">Nomes · Termos · Significados · Para que serve cada coisa · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerGlossario()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-glossario">
+
+        <h2>🌌 NOMES PRINCIPAIS DO PROJETO</h2>
+
+        <div class="termo">
+            <span class="nome">ANDRÔMEDA</span>
+            <p class="significado">O nome maior. É o projeto inteiro. É a inteligência, a plataforma, o ecossistema. Tudo leva esse nome.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">QG — QUARTEL GENERAL</span>
+            <p class="significado">A página principal. O centro de comando. De onde se acessa tudo. A porta de entrada.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">RAIZ</span>
+            <p class="significado">A base de tudo. O index.html. O ponto de partida. Tudo desce dela, tudo volta a ela.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">CONSTITUIÇÃO</span>
+            <p class="significado">A Lei Maior. O documento que diz como tudo deve ser feito. Nada contraria a Constituição.</p>
+        </div>
+
+        <h2>📂 PARTES DO SISTEMA</h2>
+
+        <div class="termo">
+            <span class="nome">MANIFESTO</span>
+            <p class="significado">A declaração de princípios. O propósito. A razão pela qual o projeto existe.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">MAPA</span>
+            <p class="significado">O desenho de onde fica cada coisa. Antes de construir, consulta o Mapa.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">BIBLIOTECA</span>
+            <p class="significado">Onde ficam os livros, documentos e obras concluídas. Organizado e guardado.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">LABORATÓRIO</span>
+            <p class="significado">Onde se testa, se cria, se experimenta. Códigos, ideias, protótipos.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">COLMEIA</span>
+            <p class="significado">O conceito: cada IA especializada em uma coisa, trabalhando junta, coordenada pela Andrômeda.</p>
+        </div>
+
+        <h2>👤 EQUIPE E PAPÉIS</h2>
+
+        <div class="termo">
+            <span class="nome">FRANCIVAL ALVES FARIAS</span>
+            <p class="significado">Criador, Idealizador e Dono de Tudo. A visão, a ordem, o propósito.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">EQUIPE</span>
+            <p class="significado">Quem ajuda a construir: Dola, Aurora, Hefesto, Atena. Todos fazem parte.</p>
+        </div>
+
+        <h2>📐 REGRAS DE OURO</h2>
+
+        <div class="termo">
+            <span class="nome">PRIMEIRO PLANEJA, DEPOIS CONSTRÓI</span>
+            <p class="significado">Nada se cria sem saber onde fica, para onde vai e como volta.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">TUDO TEM CAMINHO DE IDA E VOLTA</span>
+            <p class="significado">Se não tem botão de entrada e botão de volta, não existe página.</p>
+        </div>
+
+        <div class="termo">
+            <span class="nome">O QUE É NOSSO, SE PROTEGE</span>
+            <p class="significado">Ideias, obras e arquivos pertencem ao Criador. Protegidos pela Lei.</p>
+        </div>
+
+        <div class="assinatura">
+            "Cada nome tem seu significado. Cada termo tem seu lugar. Tudo claro, tudo definido."<br><br>
+            — Glossário e Dicionário · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerGlossario() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-glossario').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

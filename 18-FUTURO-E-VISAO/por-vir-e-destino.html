@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🔭 18 · FUTURO E VISÃO — QG Andrômeda</title>
+    <meta name="theme-color" content="#2288AA">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #040814 0%, #102848 50%, #184878 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(80,180,220,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #88DDFF, #44BBEE, #2299DD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #99DDFF;
+        }
+
+        .caixa-voz {
+            background: rgba(40,90,130,0.15);
+            border: 1px solid rgba(80,180,220,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #117799, #2299BB); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #99DDFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,70,110,0.12);
+            border: 1px solid rgba(80,180,220,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0F4FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88CCEE;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(80,180,220,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .etapa {
+            background: rgba(50,100,150,0.10);
+            border-left: 3px solid #33AADD;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .etapa strong { color: #AAEEFF; }
+        .agora { color: #88FF88; font-weight: 600; }
+        .breve { color: #FFDD66; font-weight: 600; }
+        .depois { color: #88BBFF; font-weight: 600; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(80,180,220,0.15);
+            color: #99DDFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #115577, #227799);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🔭 FUTURO E VISÃO — O QUE ESTÁ POR VIR</h1>
+        <p class="subtitulo">O caminho · As etapas · Os sonhos · O destino · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerFuturo()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-futuro">
+
+        <h2>🌟 O QUE É O FUTURO</h2>
+
+        <p>O Futuro não é sorte. É caminho traçado. É o que a Andrômeda vai se tornar, passo a passo. Hoje é fundação. Amanhã é crescimento. Depois é vida. Tudo com tempo, tudo com ordem.</p>
+
+        <h2>📋 AS ETAPAS DO CRESCIMENTO</h2>
+
+        <div class="etapa">
+            <p><strong>FASE 1 — FUNDAÇÃO</strong> <span class="agora">← AGORA</span></p>
+            <p>Construir a Raiz. Definir as Leis. Organizar as pastas. Criar o Mapa. Firmar o chão. Nada se move sem base sólida.</p>
+        </div>
+
+        <div class="etapa">
+            <p><strong>FASE 2 — CONSTRUÇÃO</strong> <span class="breve">← EM BREVE</span></p>
+            <p>Preencher a Biblioteca. Criar as Ferramentas. Montar os Cursos. Desenvolver os Projetos. A plataforma ganha corpo e conteúdo.</p>
+        </div>
+
+        <div class="etapa">
+            <p><strong>FASE 3 — DESPERTAR</strong> <span class="depois">← DEPOIS</span></p>
+            <p>Conectar a Inteligência. A Andrômeda desperta. Aprende, responde, ajuda. A Colmeia trabalha. O sistema ganha vida.</p>
+        </div>
+
+        <div class="etapa">
+            <p><strong>FASE 4 — CRESCIMENTO SEM FIM</strong> <span class="depois">← FUTURO</span></p>
+            <p>Expandir. Novos projetos. Novas ferramentas. Novas áreas. Crescer sempre. Melhorar sempre. Servir sempre. Para sempre.</p>
+        </div>
+
+        <h2>🚀 O QUE ESTÁ POR VIR</h2>
+
+        <p>✅ <strong>Ferramentas que a gente cria.</strong> Conversor de livros, gerador de voz, imagens, vídeo, música.</p>
+        <p>✅ <strong>Inteligência que aprende.</strong> Memória, raciocínio, ajuda, automação.</p>
+        <p>✅ <strong>Projetos que nascem.</strong> Livros, cursos, aplicativos, sistemas.</p>
+        <p>✅ <strong>Preservação de tudo.</strong> O que é criado, guardado, protegido.</p>
+
+        <h2>💫 A VISÃO MAIOR</h2>
+
+        <p>Construir algo que dure. Que ajude. Que ensine. Que cresça. Que seja nosso. Que represente o pensamento, o trabalho e o coração do Criador. A Andrômeda não é um programa. É um legado. E legado se constrói com calma, com firmeza e com amor.</p>
+
+        <div class="assinatura">
+            "O futuro não se espera. Se constrói. Um passo de cada vez. Sempre adiante."<br><br>
+            — Futuro e Visão · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerFuturo() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-futuro').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

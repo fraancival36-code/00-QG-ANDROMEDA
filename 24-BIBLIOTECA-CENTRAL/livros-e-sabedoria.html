@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📚 24 · BIBLIOTECA CENTRAL — QG Andrômeda</title>
+    <meta name="theme-color" content="#886633">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #100C08 0%, #382C18 50%, #584428 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(220,180,100,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #EEDDAA, #DDCC77, #BB9944);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #EEDDAA;
+        }
+
+        .caixa-voz {
+            background: rgba(100,80,40,0.15);
+            border: 1px solid rgba(220,180,100,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #997733, #BB9944); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #EEDDAA;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(80,60,30,0.12);
+            border: 1px solid rgba(220,180,100,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #FFF4D8;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #DDCC88;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(220,180,100,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .estante {
+            background: rgba(120,90,40,0.10);
+            border-left: 3px solid #DDAA55;
+            padding: 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 14px 0;
+        }
+        .livro {
+            padding: 8px 0;
+            border-bottom: 1px dashed rgba(220,180,100,0.12);
+        }
+        .titulo { font-weight: bold; color: #FFDD88; }
+        .autor { font-size: 13px; color: #EEDDAA; }
+        .status-livro { font-size: 12px; color: #AAFFAA; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(220,180,100,0.15);
+            color: #EEDDAA;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #664422, #886633);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📚 BIBLIOTECA CENTRAL — LIVROS E SABEDORIA</h1>
+        <p class="subtitulo">Onde o conhecimento é guardado · Obras do Criador · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerBiblioteca()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-biblioteca">
+
+        <h2>🏛️ O QUE É A BIBLIOTECA</h2>
+
+        <p>A Biblioteca é o coração do conhecimento da Andrômeda. Aqui ficam guardados, organizados e protegidos todos os livros, documentos, apostilas e obras criadas por Francival Alves Farias. Tudo que sai da mente, encontra guarda aqui.</p>
+
+        <h2>📖 ESTANTE DE OBRAS</h2>
+
+        <div class="estante">
+            <div class="livro">
+                <span class="titulo">⚡ Nikola Tesla — O Homem que Iluminou o Mundo</span><br>
+                <span class="autor">Autor: Francival Alves Farias</span> · <span class="status-livro">✓ Em desenvolvimento</span>
+            </div>
+            <div class="livro">
+                <span class="titulo">🛡️ Segurança do Trabalho — Normas e Práticas</span><br>
+                <span class="autor">Autor: Francival Alves Farias</span> · <span class="status-livro">✓ Em desenvolvimento</span>
+            </div>
+            <div class="livro">
+                <span class="titulo">🚚 Projeto Parceiro — Mobilidade e Apoio</span><br>
+                <span class="autor">Autor: Francival Alves Farias</span> · <span class="status-livro">✓ Em desenvolvimento</span>
+            </div>
+            <div class="livro">
+                <span class="titulo">🌌 Andrômeda — A Fundação</span><br>
+                <span class="autor">Autor: Francival Alves Farias</span> · <span class="status-livro">✓ Em construção</span>
+            </div>
+        </div>
+
+        <h2>📂 COMO SE ORGANIZA</h2>
+
+        <p>✅ <strong>Livros Concluídos</strong> — Obras terminadas, revisadas e prontas.</p>
+        <p>✅ <strong>Em Elaboração</strong> — Obras em andamento, sendo escritas.</p>
+        <p>✅ <strong>Em Planejamento</strong> — Ideias definidas, aguardando escrita.</p>
+        <p>✅ <strong>Documentos Oficiais</strong> — Constituição, Manifesto, Leis e Regulamentos.</p>
+
+        <h2>🔒 REGRAS DA BIBLIOTECA</h2>
+
+        <p>🔹 Toda obra leva nome do Autor e data.</p>
+        <p>🔹 Nada se apaga sem registro e cópia de segurança.</p>
+        <p>🔹 Obras protegidas por Direitos Autorais. Uso só com permissão.</p>
+        <p>🔹 Quando concluída, registra-se no Livro de Ouro.</p>
+
+        <div class="assinatura">
+            "Todo conhecimento merece guarda. Toda obra merece respeito. Tudo que é criado, é protegido."<br><br>
+            — Biblioteca Central · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerBiblioteca() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-biblioteca').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

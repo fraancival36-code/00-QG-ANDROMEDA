@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📖 16 · MANUAL DE USO — QG Andrômeda</title>
+    <meta name="theme-color" content="#448866">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #08100C 0%, #183028 50%, #285040 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(100,200,150,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #88E8BB, #58C898, #38A878);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #A8E8C8;
+        }
+
+        .caixa-voz {
+            background: rgba(40,100,70,0.15);
+            border: 1px solid rgba(100,200,150,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #228855, #38A870); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #A8E8C8;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,70,50,0.12);
+            border: 1px solid rgba(100,200,150,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0F8F0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88E8BB;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(100,200,150,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .passo {
+            background: rgba(50,100,75,0.10);
+            border-left: 3px solid #48C888;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .passo strong { color: #A8F0C8; }
+        .codigo {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            background: rgba(0,0,0,0.35);
+            padding: 8px 10px;
+            border-radius: 6px;
+            margin: 8px 0;
+            color: #90F0C0;
+        }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(100,200,150,0.15);
+            color: #A8E8C8;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #286644, #388860);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📖 MANUAL DE USO E ORIENTAÇÃO</h1>
+        <p class="subtitulo">Como navegar · Como criar · Como organizar · Como proteger · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerManual()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-manual">
+
+        <h2>📐 COMO NAVEGAR PELO SISTEMA</h2>
+
+        <div class="passo">
+            <p><strong>Passo 1 — Sempre começa pela Raiz</strong></p>
+            <p>A página principal é o INDEX.HTML. Tudo começa ali. Cada botão leva a uma pasta. Cada pasta tem suas páginas.</p>
+        </div>
+
+        <div class="passo">
+            <p><strong>Passo 2 — Sempre tem caminho de volta</strong></p>
+            <p>Toda página tem botão: VOLTAR À RAIZ. Não importa onde esteja, sempre volta. Nenhuma página fica perdida.</p>
+        </div>
+
+        <div class="passo">
+            <p><strong>Passo 3 — Como escrever os caminhos</strong></p>
+            <p>Para ir da Raiz para uma pasta: escreve o nome da pasta, barra, nome do arquivo.</p>
+            <div class="codigo">01-CONSTITUICAO/constituicao.html</div>
+            <p>Para voltar de uma pasta para a Raiz: dois pontos, barra, index.</p>
+            <div class="codigo">../index.html</div>
+        </div>
+
+        <h2>📂 COMO CRIAR UMA PÁGINA NOVA</h2>
+
+        <p>✅ <strong>Primeiro:</strong> Verifica se já não existe no Mapa.</p>
+        <p>✅ <strong>Segundo:</strong> Cria a pasta com número e nome — ex: 17-NOVA-PASTA.</p>
+        <p>✅ <strong>Terceiro:</strong> Cria o arquivo dentro da pasta com nome claro.</p>
+        <p>✅ <strong>Quarto:</strong> Coloca o botão de VOLTAR À RAIZ.</p>
+        <p>✅ <strong>Quinto:</strong> Coloca o botão de acesso na página principal.</p>
+
+        <h2>🛡️ REGRAS DE OURO QUE NUNCA SE ESQUECE</h2>
+
+        <p>🔹 <strong>Não se cria sem caminho.</strong> Se não tem botão de entrada e botão de volta, não existe página.</p>
+        <p>🔹 <strong>Não se muda o nome sem atualizar tudo.</strong> Se muda o nome da pasta, atualiza todos os botões que ligam a ela.</p>
+        <p>🔹 <strong>Não se apaga sem registrar.</strong> Antes de excluir qualquer coisa, guarda cópia no Arquivo.</p>
+        <p>🔹 <strong>Um de cada vez.</strong> Termina uma página, depois cria a próxima. Não mistura. Não confunde.</p>
+
+        <h2>🔄 O FLUXO PERFEITO</h2>
+
+        <p>Ideia → Verifica o Mapa → Cria Pasta → Cria Página → Coloca Botão de Voltar → Coloca Botão na Raiz → Testa Ida e Volta → Pronto.</p>
+
+        <div class="assinatura">
+            "Quem segue o caminho, nunca se perde. Quem segue as regras, nunca se confunde."<br><br>
+            — Manual de Uso · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerManual() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-manual').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

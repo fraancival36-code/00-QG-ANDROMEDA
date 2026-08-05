@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🚀 26 · PROJETOS E OBRAS — QG Andrômeda</title>
+    <meta name="theme-color" content="#5577BB">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0C1018 0%, #203050 50%, #304880 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(120,160,255,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #AACCFF, #7799FF, #5577EE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #BBDDFF;
+        }
+
+        .caixa-voz {
+            background: rgba(60,90,150,0.15);
+            border: 1px solid rgba(120,160,255,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #3355AA, #4466CC); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #BBDDFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(40,60,120,0.12);
+            border: 1px solid rgba(120,160,255,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0E8FF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #99BBFF;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(120,160,255,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .categoria {
+            margin: 16px 0;
+        }
+        .projeto {
+            background: rgba(80,110,180,0.10);
+            border-left: 3px solid #6688EE;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 10px 0;
+        }
+        .projeto strong { color: #AACCFE; }
+        .concluido { color: #44FF88; font-weight: 600; }
+        .andamento { color: #FFDD44; font-weight: 600; }
+        .planejado { color: #88BBFF; font-weight: 600; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(120,160,255,0.15);
+            color: #BBDDFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #334488, #4455AA);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🚀 PROJETOS E OBRAS — O QUE EXISTE E O QUE VEM</h1>
+        <p class="subtitulo">Concluídos · Em Andamento · Planejados · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerProjetos()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-projetos">
+
+        <h2>📋 O QUE É ESTE PAINEL</h2>
+
+        <p>Aqui se vê tudo o que foi criado, o que está sendo feito e o que ainda vai nascer. Nenhum projeto se perde. Todos têm seu lugar, seu tempo e seu propósito.</p>
+
+        <h2>✅ CONCLUÍDOS — Fundação da Andrômeda</h2>
+        <div class="categoria">
+            <div class="projeto">
+                <strong>🌌 QG Andrômeda — Raiz e Estrutura</strong> <span class="concluido">✓ CONCLUÍDO</span><br>
+                <p>Constituição, Manifesto, Princípios, Mapa, Diário, Livro de Ouro e todas as páginas fundamentais. Base sólida firmada.</p>
+            </div>
+        </div>
+
+        <h2>🔄 EM ANDAMENTO — Trabalho Atual</h2>
+        <div class="categoria">
+            <div class="projeto">
+                <strong>📖 Conversor de Livros — TXT → EPUB</strong> <span class="andamento">EM DESENVOLVIMENTO</span><br>
+                <p>Ferramenta própria para converter obras em formato digital. Sem custo, sem depender de terceiros.</p>
+            </div>
+            <div class="projeto">
+                <strong>🛡️ Livro — Segurança do Trabalho</strong> <span class="andamento">EM ELABORAÇÃO</span><br>
+                <p>Normas, práticas e orientações. Obra do Criador.</p>
+            </div>
+            <div class="projeto">
+                <strong>⚡ Livro — Nikola Tesla</strong> <span class="andamento">EM ELABORAÇÃO</span><br>
+                <p>História e ensinamentos do grande inventor. Obra do Criador.</p>
+            </div>
+            <div class="projeto">
+                <strong>🚚 Projeto Parceiro — Mobilidade</strong> <span class="andamento">EM ESTRUTURAÇÃO</span><br>
+                <p>Apoio a motoristas, rotas, segurança e auxílio. Sistema de ajuda.</p>
+            </div>
+        </div>
+
+        <h2>🔭 PLANEJADOS — O Futuro</h2>
+        <div class="categoria">
+            <div class="projeto">
+                <strong>🎤 Gerador de Voz Natural</strong> <span class="planejado">AGUARDANDO</span><br>
+                <p>Transformar texto em fala com voz calma, clara e humana.</p>
+            </div>
+            <div class="projeto">
+                <strong>🎬 Texto em Vídeo</strong> <span class="planejado">AGUARDANDO</span><br>
+                <p>Criar vídeos automáticos a partir de histórias.</p>
+            </div>
+            <div class="projeto">
+                <strong>🎵 Gerador de Música</strong> <span class="planejado">AGUARDANDO</span><br>
+                <p>Compor melodias e sons.</p>
+            </div>
+            <div class="projeto">
+                <strong>🧠 Despertar do Núcleo</strong> <span class="planejado">AGUARDANDO</span><br>
+                <p>Inteligência, memória e raciocínio da Andrômeda.</p>
+            </div>
+        </div>
+
+        <h2>📐 REGRA DE ANDAMENTO</h2>
+
+        <p>🔹 Um projeto de cada vez na frente.</p>
+        <p>🔹 Os outros aguardam em silêncio.</p>
+        <p>🔹 Quando um se conclui, registra-se no Livro de Ouro.</p>
+        <p>🔹 E o próximo começa.</p>
+
+        <div class="assinatura">
+            "Um passo de cada vez. Um projeto de cada vez. Com calma, com ordem, com certeza."<br><br>
+            — Projetos e Obras · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerProjetos() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-projetos').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

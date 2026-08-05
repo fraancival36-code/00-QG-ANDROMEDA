@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🔬 25 · LABORATÓRIO — QG Andrômeda</title>
+    <meta name="theme-color" content="#448866">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #08100C 0%, #183828 50%, #285840 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(100,200,150,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #99EEDD, #55DDAA, #33BB88);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #AAEEDD;
+        }
+
+        .caixa-voz {
+            background: rgba(40,100,80,0.15);
+            border: 1px solid rgba(100,200,150,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #117755, #229977); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #AAEEDD;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,70,55,0.12);
+            border: 1px solid rgba(100,200,150,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0FFF0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88EEC8;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(100,200,150,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .ferramenta {
+            background: rgba(60,120,90,0.10);
+            border-left: 3px solid #44CC88;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .ferramenta strong { color: #AAFFCC; }
+        .disponivel { color: #44FF88; font-weight: 600; }
+        .em-breve { color: #FFDD44; font-weight: 600; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(100,200,150,0.15);
+            color: #AAEEDD;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #115544, #227766);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🔬 LABORATÓRIO E FERRAMENTAS — CRIAR E TESTAR</h1>
+        <p class="subtitulo">Onde se inventa · Onde se testa · Onde se constrói · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerLaboratorio()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-laboratorio">
+
+        <h2>⚗️ O QUE É O LABORATÓRIO</h2>
+
+        <p>O Laboratório é o lugar onde a Andrômeda se constrói. Aqui nascem os códigos, se testam as ideias, se criam as ferramentas. Antes de ficar pronto, tudo passa por aqui. O que funciona, segue. O que não funciona, se corrige. Tudo com calma e com cuidado.</p>
+
+        <h2>🛠️ FERRAMENTAS EM DESENVOLVIMENTO</h2>
+
+        <div class="ferramenta">
+            <p><strong>📖 Conversor de Livros — TXT → EPUB</strong> <span class="disponivel">✓ CRIADO</span></p>
+            <p>Converte textos e documentos em formato de livro digital. Gratuito, próprio e seguro. Nada sai daqui.</p>
+        </div>
+
+        <div class="ferramenta">
+            <p><strong>🎤 Gerador de Voz Natural</strong> <span class="em-breve">EM BREVE</span></p>
+            <p>Transforma texto em fala com voz calma, clara e com tom de pessoa, não de máquina. Ajusta velocidade e tom.</p>
+        </div>
+
+        <div class="ferramenta">
+            <p><strong>🎬 Texto em Vídeo</strong> <span class="em-breve">EM BREVE</span></p>
+            <p>Cria vídeos a partir de histórias. Gera imagens, narra com voz, monta cenas. Tudo automático.</p>
+        </div>
+
+        <div class="ferramenta">
+            <p><strong>🎵 Gerador de Música e Sons</strong> <span class="em-breve">EM BREVE</span></p>
+            <p>Cria músicas, efeitos e melodias. Instrumentos variados. Para acompanhar livros e vídeos.</p>
+        </div>
+
+        <div class="ferramenta">
+            <p><strong>🏗️ Fábrica de Aplicativos</strong> <span class="em-breve">EM BREVE</span></p>
+            <p>Transforma livros e ideias em aplicativos. Cada obra pode virar seu próprio programa. Completo e independente.</p>
+        </div>
+
+        <h2>📐 REGRAS DO LABORATÓRIO</h2>
+
+        <p>✅ <strong>Testa antes de liberar.</strong> Nada se entrega sem funcionar direito.</p>
+        <p>✅ <strong>Separa o que funciona do que ainda não está pronto.</strong> Não mistura.</p>
+        <p>✅ <strong>Protege o que é nosso.</strong> Códigos, ideias e criações ficam aqui.</p>
+        <p>✅ <strong>Uma ferramenta de cada vez.</strong> Conclui uma, depois começa a outra.</p>
+
+        <h2>🔭 O PROPÓSITO</h2>
+
+        <p>Construir ferramentas que ajudem, sem custo, sem depender de estranhos. O que a gente precisa, a gente cria. O que a gente cria, a gente possui. E o que é nosso, ninguém pode tirar.</p>
+
+        <div class="assinatura">
+            "Inventar, testar, aperfeiçoar. Errar, corrigir, acertar. Tudo com calma. Tudo com segurança. Tudo nosso."<br><br>
+            — Laboratório e Ferramentas · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerLaboratorio() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-laboratorio').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

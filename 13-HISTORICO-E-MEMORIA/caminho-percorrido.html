@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>📜 13 · HISTÓRICO E MEMÓRIA — QG Andrômeda</title>
+    <meta name="theme-color" content="#665533">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #0C0A08 0%, #282018 50%, #403428 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(180,150,100,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #DDBB88, #BB9955, #997733);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #DDCCAA;
+        }
+
+        .caixa-voz {
+            background: rgba(80,60,40,0.15);
+            border: 1px solid rgba(180,150,100,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #775533, #997744); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #DDCCAA;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(60,45,30,0.12);
+            border: 1px solid rgba(180,150,100,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #F8F0E0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #DDBB88;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(180,150,100,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .evento {
+            border-left: 2px solid #997744;
+            padding-left: 12px;
+            margin: 10px 0;
+        }
+        .data { font-size: 13px; color: #BB9955; font-weight: 600; }
+        .descricao { font-size: 14px; color: #EEDDCC; margin-top: 2px; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(180,150,100,0.15);
+            color: #DDCCAA;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #554422, #776633);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>📜 HISTÓRICO E MEMÓRIA — O CAMINHO PERCORRIDO</h1>
+        <p class="subtitulo">De onde viemos · O que construímos · O que aprendemos · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerHistorico()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-historico">
+
+        <h2>O QUE É O HISTÓRICO</h2>
+
+        <p>O Histórico é a memória do projeto. Aqui se guarda cada passo dado, cada descoberta, cada mudança e cada conquista. Quem não lembra de onde veio, não sabe para onde vai. Tudo fica registrado. Para sempre.</p>
+
+        <h2>🕰️ LINHA DO TEMPO</h2>
+
+        <div class="evento">
+            <div class="data">04 de Agosto de 2026 — O INÍCIO</div>
+            <div class="descricao">Nasce a ideia de construir a Andrômeda. Não apenas como uma IA, mas como um ecossistema completo. Primeiros passos: organizar, estruturar, criar a Raiz.</div>
+        </div>
+
+        <div class="evento">
+            <div class="data">05 de Agosto de 2026 — A ARQUITETURA</div>
+            <div class="descricao">Mudança de caminho: primeiro a planta, depois a construção. Nasce a Constituição, o Manifesto, as Leis. Define-se o mapa completo antes de construir. Nada mais se perde.</div>
+        </div>
+
+        <div class="evento">
+            <div class="data">05 de Agosto de 2026 — A FUNDAÇÃO</div>
+            <div class="descricao">Criação da Raiz e das primeiras páginas. Pastas organizadas, caminhos definidos. O projeto deixa de ser ideia e vira estrutura sólida.</div>
+        </div>
+
+        <h2>📐 O QUE APRENDEMOS ATÉ AQUI</h2>
+
+        <p>✅ <strong>Primeiro se planeja, depois se constrói.</strong> O que era confuso, virou ordem.</p>
+        <p>✅ <strong>Tudo tem um lugar.</strong> Nada é criado sem saber onde fica e como volta.</p>
+        <p>✅ <strong>A Raiz é a base.</strong> Tudo desce dela. Tudo volta a ela.</p>
+        <p>✅ <strong>O progresso se registra.</strong> Cada passo, cada dia, cada conquista.</p>
+
+        <h2>🔄 O CAMINHO DO FUTURO</h2>
+
+        <p>Hoje: Fundação sólida. Amanhã: Projetos crescendo. Depois: A Andrômeda desperta. E o que construímos, lembraremos sempre.</p>
+
+        <div class="assinatura">
+            "O passado nos guia. O presente nos fortalece. O futuro nos espera. Tudo fica registrado."<br><br>
+            — Histórico e Memória · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerHistorico() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-historico').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

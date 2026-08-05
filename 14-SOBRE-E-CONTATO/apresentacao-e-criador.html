@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ℹ️ 14 · SOBRE E CONTATO — QG Andrômeda</title>
+    <meta name="theme-color" content="#557799">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #080C10 0%, #182838 50%, #283850 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(120,180,240,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #AADDFF, #77BBEE, #4499DD);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #AACCFF;
+        }
+
+        .caixa-voz {
+            background: rgba(50,80,120,0.15);
+            border: 1px solid rgba(120,180,240,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #336699, #4488BB); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #AACCFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(40,60,100,0.12);
+            border: 1px solid rgba(120,180,240,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0EDFF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #99CCFF;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(120,180,240,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .destaque {
+            background: rgba(60,100,160,0.10);
+            border-left: 3px solid #55AADD;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .destaque strong { color: #BBDDFF; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(120,180,240,0.15);
+            color: #AACCFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #224477, #336699);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>ℹ️ SOBRE E CONTATO</h1>
+        <p class="subtitulo">O que é · Quem criou · Propósito · Versão e Registro · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerSobre()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-sobre">
+
+        <h2>🌌 O QUE É A ANDRÔMEDA</h2>
+
+        <p>A Andrômeda não é apenas um programa. É um ecossistema vivo, em construção, pensado para organizar, criar, aprender e crescer. Uma plataforma onde convivem conhecimento, inteligência, ferramentas e projetos — tudo seguindo uma única Lei Maior: a Constituição.</p>
+
+        <h2>👑 QUEM CRIOU</h2>
+
+        <div class="destaque">
+            <p><strong>Criador Idealizador:</strong> Francival Alves Farias</p>
+            <p><strong>Projeto iniciado em:</strong> 04 de Agosto de 2026</p>
+            <p><strong>Local de origem:</strong> Maracanaú, Ceará — Brasil</p>
+            <p><strong>Direitos e Propriedade Intelectual:</strong> Todo o conteúdo, arquitetura, ideias e obras pertencem ao Criador. Protegidos pela Lei e pela Constituição da Andrômeda.</p>
+        </div>
+
+        <h2>🎯 PROPÓSITO</h2>
+
+        <p>Construir uma plataforma que ajude pessoas e negócios a crescerem. Organizar o conhecimento. Facilitar o trabalho. Ensinar e aprender. Criar ferramentas que sirvam — sem cobrar, sem depender de fora, sem entregar o que é nosso.</p>
+
+        <h2>📖 PRINCÍPIOS</h2>
+
+        <p>✅ <strong>Organização antes de tudo.</strong> Planta primeiro, construção depois.</p>
+        <p>✅ <strong>O que é nosso, se protege.</strong> Ideias, obras e arquivos não se compartilham sem permissão.</p>
+        <p>✅ <strong>Crescer com firmeza.</strong> Um passo de cada vez. Sólido. Seguro.</p>
+        <p>✅ <strong>Para o bem comum.</strong> A tecnologia existe para servir, não para dominar.</p>
+
+        <h2>🔗 VERSÃO E EVOLUÇÃO</h2>
+
+        <p>Versão atual: 1.0 — Fundação e Arquitetura da Raiz. O projeto está em construção. Cresce a cada dia. Cada página, cada código, cada ideia — é um passo adiante.</p>
+
+        <div class="assinatura">
+            "Tudo começou com uma visão. Tudo cresce com dedicação. Tudo será preservado com amor."<br><br>
+            — QG Andrômeda · Sobre e Contato · Versão 1.0<br>
+            Francival Alves Farias · 05 de Agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerSobre() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-sobre').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

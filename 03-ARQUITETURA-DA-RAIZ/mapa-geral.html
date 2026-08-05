@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🗺️ 03 · ARQUITETURA — QG Andrômeda</title>
+    <meta name="theme-color" content="#008866">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #010410 0%, #082C34 50%, #0F4250 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(60,180,140,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #22CCAA, #22AA88, #228866);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #77EEDD;
+        }
+
+        .caixa-voz {
+            background: rgba(30,100,80,0.15);
+            border: 1px solid rgba(60,200,160,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #228866, #33AA77); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #88EEDD;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(20,70,60,0.12);
+            border: 1px solid rgba(60,180,140,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E6FFFA;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88EEDD;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(60,180,140,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .arvore {
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+            background: rgba(0,40,30,0.30);
+            padding: 14px;
+            border-radius: 10px;
+            margin: 14px 0;
+            white-space: pre-wrap;
+            color: #AAFFDD;
+        }
+
+        .regra {
+            background: rgba(40,120,90,0.10);
+            border-left: 3px solid #22AA88;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 14px 0;
+        }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(60,180,140,0.15);
+            color: #77EEDD;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #226655, #338877);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🗺️ ARQUITETURA DA RAIZ — MAPA GERAL</h1>
+        <p class="subtitulo">Planta completa · Caminhos · Ligações · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerArquitetura()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-arquitetura">
+
+        <h2>PREÂMBULO</h2>
+
+        <p>Esta é a Planta Geral da Andrômeda. Aqui está desenhado onde cada coisa fica. Antes de construir qualquer página, qualquer projeto, qualquer arquivo — consulta-se este Mapa. Nada é criado fora do lugar. Nada fica sem caminho.</p>
+
+        <h2>🌳 A ÁRVORE COMPLETA — DA RAIZ AO UNIVERSO</h2>
+
+        <div class="arvore">
+🌌 RAIZ — 00-QG-ANDRÔMEDA
+│
+├── 01-MANIFESTO — Identidade e Propósito ✅
+├── 02-CONSTITUICAO — Lei Maior do Sistema ✅
+├── 03-ARQUITETURA — Planta e Ligações ← AGORA
+│
+├── 04-NUCLEO-ANDROMEDA — Cérebro, Memória e Inteligência
+├── 05-CENTRO-DE-COMANDO — Painel, Controle e Comando
+│
+├── 06-BIBLIOTECA — Livros, Conhecimento e DEPÓSITO-GERAL
+├── 07-LABORATORIO — Testes, Experimentos e Protótipos
+├── 08-SISTEMA-DE-LIGACOES — Conexões entre todas as peças
+│
+├── 09-PROJETOS — Obras em Desenvolvimento
+│
+├── 10-CURSOS-E-TREINAMENTO — Ensino, Aulas e Material
+├── 11-SEGURANCA — Proteção, Regras e Permissões
+├── 12-DOCUMENTACAO — Manuais, Histórico e Versões
+│
+├── 13-REPOSITORIO — Código, Versões e Lançamentos
+├── 14-IA-E-AGENTES — Equipe de IAs e Agentes
+├── 15-API-E-INTEGRACOES — Conexões e Serviços Externos
+├── 16-PAINEL-DO-SISTEMA — Status, Recursos e Logs
+├── 17-BACKUP-E-RECUPERACAO — Proteção e Restauração
+│
+├── 18-CONFIGURACOES — Tema, Idioma, Chaves, Preferências
+├── 19-CONHECIMENTO-DA-IA — Memória, Aprendizado e Base
+│
+└── 20-UNIVERSO-ANDROMEDA — Expansão Infinita
+    ├── Mobilidade
+    ├── Engenharia
+    ├── Indústria
+    ├── Saúde
+    ├── Educação
+    ├── Comércio
+    ├── Agricultura
+    ├── Pesquisa
+    └── Criação
+        </div>
+
+        <h2>📐 REGRAS DE CONSTRUÇÃO</h2>
+
+        <div class="regra">
+            <p><strong>Regra 1 — ORDEM DOS NÚMEROS</strong></p>
+            <p>Sempre se segue a numeração. Não se pula número. Não se cria pasta nova antes de terminar a anterior. Um de cada vez. Sempre pra frente.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 2 — NOMENCLATURA</strong></p>
+            <p>Pastas: NÚMERO + NOME, sem espaços, com hífen. Exemplo: <code>01-MANIFESTO</code></p>
+            <p>Arquivos: nome descritivo + versão. Exemplo: <code>manifesto-andromeda.html</code></p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 3 — CAMINHOS E LIGAÇÕES</strong></p>
+            <p>Toda página tem botão de VOLTAR à Raiz. Toda página é acessível pela Raiz. Nenhuma página fica perdida. O caminho de volta existe sempre.</p>
+        </div>
+
+        <div class="regra">
+            <p><strong>Regra 4 — SUBPASTAS</strong></p>
+            <p>Quando uma pasta precisar crescer, cria-se subpastas dentro dela. Exemplo: <code>06-BIBLIOTECA/LIVROS/</code>. A Raiz continua firme. A árvore só cresce pra baixo e pros lados.</p>
+        </div>
+
+        <h2>🔗 O SISTEMA DE LIGAÇÕES</h2>
+
+        <p>Tudo que está na Raiz desce para as pastas. Tudo que está nas pastas sobe de volta à Raiz. O fluxo é sempre: <strong>Raiz → Pasta → Arquivo → Pasta → Raiz</strong>. Nunca se perde. Sempre se sabe de onde veio e pra onde vai.</p>
+
+        <h2>📖 ORDEM DE CONSTRUÇÃO</h2>
+
+        <p>Segue-se exatamente a numeração. Primeiro a Fundação (01, 02, 03). Depois o Cérebro (04, 05). Depois o Conhecimento (06, 07, 08). Depois os Projetos. Depois a Infraestrutura. Por último a Expansão.</p>
+        <p>Não se constrói o telhado antes das paredes. Não se constrói paredes antes do chão. A ordem é Lei.</p>
+
+        <div class="assinatura">
+            "Da Raiz nascem os galhos. Dos galhos vem o conhecimento. Tudo volta à origem."<br><br>
+            — Arquitetura da Raiz · Versão 1.0<br>
+            Francival Alves Farias · 04 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerArquitetura() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-arquitetura').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

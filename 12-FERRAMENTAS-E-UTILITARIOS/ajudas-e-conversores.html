@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🛠️ 12 · FERRAMENTAS — QG Andrômeda</title>
+    <meta name="theme-color" content="#AA7722">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #100C04 0%, #382C10 50%, #584418 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(220,180,60,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #FFDD66, #EEBB44, #CC9922);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #EEDD99;
+        }
+
+        .caixa-voz {
+            background: rgba(100,80,20,0.15);
+            border: 1px solid rgba(220,180,60,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #AA7722, #CC9933); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #EEDD99;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(80,60,15,0.12);
+            border: 1px solid rgba(200,160,50,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #FFF8E0;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #EEDD88;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(200,160,60,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .ferramenta {
+            background: rgba(120,90,25,0.10);
+            border-left: 3px solid #DDAA33;
+            padding: 12px 14px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0;
+        }
+        .ferramenta h3 {
+            font-size: 15px;
+            color: #EEDD88;
+            margin-bottom: 6px;
+        }
+        .disponivel { color: #88EE88; }
+        .em-breve { color: #EEDD66; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(200,160,60,0.15);
+            color: #EEDD99;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #775522, #997733);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🛠️ FERRAMENTAS E UTILITÁRIOS</h1>
+        <p class="subtitulo">Conversão · Edição · Auxílio · Tudo que facilita o trabalho · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerFerramentas()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-ferramentas">
+
+        <h2>O QUE SÃO AS FERRAMENTAS</h2>
+
+        <p>Ferramentas são mãos que ajudam. São aplicativos simples, feitos por nós, para o nosso trabalho. Convertem, organizam, auxiliam. Sem depender de terceiros. Sem pagar. Sem entregar nossos arquivos a ninguém. Tudo aqui, tudo nosso.</p>
+
+        <h2>📦 LISTA DE FERRAMENTAS</h2>
+
+        <div class="ferramenta">
+            <h3>📖 CONVERSOR DE LIVROS — TXT → EPUB</h3>
+            <p>Transforma texto simples em arquivo de livro pronto para ler e publicar. Sem depender de sites externos.</p>
+            <p><strong>Status:</strong> <span class="disponivel">✅ DISPONÍVEL — Em construção</span></p>
+        </div>
+
+        <div class="ferramenta">
+            <h3>🎙️ GERADOR DE ÁUDIO E VOZ</h3>
+            <p>Transforma texto em fala. Narra livros. Lê documentos. Com voz natural e ajustável.</p>
+            <p><strong>Status:</strong> <span class="em-breve">⏳ EM BREVE</span></p>
+        </div>
+
+        <div class="ferramenta">
+            <h3>🎨 CRIADOR DE IMAGENS E ILUSTRAÇÕES</h3>
+            <p>Gera imagens para os livros, projetos e obras. Desenha o que se descreve.</p>
+            <p><strong>Status:</strong> <span class="em-breve">⏳ EM BREVE</span></p>
+        </div>
+
+        <div class="ferramenta">
+            <h3>🎬 TEXTO EM VÍDEO</h3>
+            <p>Transforma narração e texto em vídeo. Cria apresentações e materiais visuais.</p>
+            <p><strong>Status:</strong> <span class="em-breve">⏳ EM BREVE</span></p>
+        </div>
+
+        <div class="ferramenta">
+            <h3>🎵 GERADOR DE MÚSICA E SONS</h3>
+            <p>Cria melodias, sons e fundos. Com instrumentos e estilos que se escolher.</p>
+            <p><strong>Status:</strong> <span class="em-breve">⏳ EM BREVE</span></p>
+        </div>
+
+        <h2>📐 PRINCÍPIOS DAS FERRAMENTAS</h2>
+
+        <p>✅ <strong>Feito por nós.</strong> Nenhuma ferramenta vem de fora sem necessidade.</p>
+        <p>✅ <strong>Arquivos ficam aqui.</strong> Nada é enviado para servidores alheios. Segurança total.</p>
+        <p>✅ <strong>De graça e para sempre.</strong> Sem assinatura, sem cobrança, sem bloqueios.</p>
+        <p>✅ <strong>Uma ferramenta por vez.</strong> Conclui-se uma, depois cria-se a próxima.</p>
+        <p>✅ <strong>Trabalham juntas.</strong> Uma ferramenta pode usar o que a outra criou.</p>
+
+        <h2>🔄 COMO FUNCIONAM JUNTAS</h2>
+
+        <p>Escreve o Livro → Converte para EPUB → Gera Áudio → Cria Imagens → Monta Vídeo → Tudo guardado na Biblioteca.</p>
+
+        <div class="assinatura">
+            "A ferramenta bem feita poupa o trabalho e protege o que é nosso. Fazemos por nós, para nós."<br><br>
+            — Ferramentas e Utilitários · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerFerramentas() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-ferramentas').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

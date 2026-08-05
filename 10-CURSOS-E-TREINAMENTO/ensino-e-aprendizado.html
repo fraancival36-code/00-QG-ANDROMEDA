@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🎓 10 · CURSOS E TREINAMENTO — QG Andrômeda</title>
+    <meta name="theme-color" content="#2266AA">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #040814 0%, #102850 50%, #183878 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(80,160,255,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #88CCFF, #55AAFF, #3388EE);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #99CCFF;
+        }
+
+        .caixa-voz {
+            background: rgba(40,80,140,0.15);
+            border: 1px solid rgba(80,160,255,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #2266BB, #4488DD); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #99CCFF;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,60,120,0.12);
+            border: 1px solid rgba(80,160,255,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0EDFF;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #99CCFF;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(80,160,255,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .curso {
+            background: rgba(60,100,180,0.10);
+            border-left: 3px solid #4488EE;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .curso h3 {
+            font-size: 15px;
+            color: #AADDFF;
+            margin-bottom: 6px;
+        }
+        .etapa {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(80,160,255,0.12);
+            font-size: 14px;
+        }
+        .etapa .status { font-weight: 600; }
+        .concluido { color: #88EE88; }
+        .planejando { color: #EEDD66; }
+        .criando { color: #88CCEE; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(80,160,255,0.15);
+            color: #99CCFF;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #225588, #3377AA);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🎓 CURSOS E TREINAMENTO</h1>
+        <p class="subtitulo">Ensinar · Aprender · Formar · Compartilhar Saber · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerCursos()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-cursos">
+
+        <h2>O QUE É O ENSINO</h2>
+
+        <p>O conhecimento guardado é semente. O conhecimento ensinado é floresta. Aqui se transforma sabedoria em aula, em lição, em caminho. Aqui se ensina o que foi aprendido. Aqui se forma quem vai construir o futuro.</p>
+
+        <h2>📚 ÁREAS DE ENSINO</h2>
+
+        <div class="curso">
+            <h3>📖 CONHECIMENTO E CIÊNCIA</h3>
+            <div class="etapa"><span>Estudo e divulgação de grandes nomes e descobertas</span> <span class="status concluido">✅ BASE PRONTA</span></div>
+            <div class="etapa"><span>Conteúdo organizado em lições</span> <span class="status criando">🔨 CRIANDO</span></div>
+            <div class="etapa"><span>Material de apoio e exercícios</span> <span class="status planejando">⏳ PLANEJANDO</span></div>
+        </div>
+
+        <div class="curso">
+            <h3>🛡️ SEGURANÇA E TRABALHO</h3>
+            <div class="etapa"><span>Normas e procedimentos técnicos</span> <span class="status concluido">✅ BASE PRONTA</span></div>
+            <div class="etapa"><span>Formação e certificação</span> <span class="status criando">🔨 CRIANDO</span></div>
+            <div class="etapa"><span>Exemplos práticos e casos reais</span> <span class="status planejando">⏳ PLANEJANDO</span></div>
+        </div>
+
+        <div class="curso">
+            <h3>💻 TECNOLOGIA E SISTEMAS</h3>
+            <div class="etapa"><span>Como funciona a Raiz e a Arquitetura</span> <span class="status concluido">✅ BASE PRONTA</span></div>
+            <div class="etapa"><span>Construção passo a passo</span> <span class="status criando">🔨 CRIANDO</span></div>
+            <div class="etapa"><span>Práticas e projetos reais</span> <span class="status planejando">⏳ PLANEJANDO</span></div>
+        </div>
+
+        <h2>📐 PRINCÍPIOS DO ENSINO</h2>
+
+        <p>✅ <strong>Ensina-se o que se sabe.</strong> Não se ensina o que não se compreende.</p>
+        <p>✅ <strong>Passo a passo.</strong> Do simples ao composto. Do básico ao avançado. Sem pressa.</p>
+        <p>✅ <strong>Para todos.</strong> O saber não se esconde. Compartilha-se. Multiplica-se.</p>
+        <p>✅ <strong>Aprende-se sempre.</strong> Quem ensina, também aprende. A cada aula, um novo entendimento.</p>
+
+        <h2>🔄 O CAMINHO DO SABER</h2>
+
+        <p>Aprender → Compreender → Organizar → Ensinar → Aprender Mais → Ensinar Melhor → Para Sempre.</p>
+
+        <div class="assinatura">
+            "O saber guardado morre com quem o guarda. O saber ensinado vive para sempre."<br><br>
+            — Cursos e Treinamento · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerCursos() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-cursos').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

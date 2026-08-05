@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🧪 07 · LABORATÓRIO — QG Andrômeda</title>
+    <meta name="theme-color" content="#228866">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            min-height: 100vh;
+            background: linear-gradient(180deg, #040C08 0%, #103020 50%, #184830 100%);
+            font-family: 'Segoe UI', -apple-system, sans-serif;
+            color: #FFFFFF;
+            padding: 12px;
+        }
+        .caixa { max-width: 600px; margin: 0 auto; }
+
+        .cabecalho {
+            text-align: center;
+            padding: 20px 14px 14px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(80,200,120,0.25);
+        }
+        h1 {
+            font-size: 24px;
+            background: linear-gradient(90deg, #66EE99, #44CC77, #22AA55);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+        }
+        .subtitulo {
+            font-size: 13px;
+            color: #99EEBB;
+        }
+
+        .caixa-voz {
+            background: rgba(40,100,60,0.15);
+            border: 1px solid rgba(80,200,120,0.25);
+            border-radius: 12px;
+            padding: 12px 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .botao-voz {
+            padding: 10px 16px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .botao-voz:active { transform: scale(0.97); }
+        .btn-ler { background: linear-gradient(90deg, #228855, #33AA66); color: #fff; }
+        .btn-parar { background: linear-gradient(90deg, #883333, #BB4444); color: #fff; }
+        .status-voz {
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #99EEBB;
+            margin-top: 8px;
+        }
+
+        .conteudo {
+            background: rgba(30,80,50,0.12);
+            border: 1px solid rgba(80,200,120,0.18);
+            border-radius: 12px;
+            padding: 20px 16px;
+            margin-bottom: 16px;
+            line-height: 1.8;
+            font-size: 15px;
+            color: #E0FFEE;
+        }
+        .conteudo h2 {
+            font-size: 16px;
+            color: #88EEAA;
+            margin: 22px 0 10px 0;
+            padding-bottom: 4px;
+            border-bottom: 1px solid rgba(80,200,120,0.15);
+        }
+        .conteudo h2:first-child { margin-top: 0; }
+        .conteudo p { margin-bottom: 10px; text-align: justify; }
+
+        .area {
+            background: rgba(50,120,70,0.10);
+            border-left: 3px solid #44CC66;
+            padding: 14px 16px;
+            border-radius: 0 10px 10px 0;
+            margin: 14px 0;
+        }
+        .area h3 {
+            font-size: 15px;
+            color: #AAEEBB;
+            margin-bottom: 8px;
+        }
+        .etapa {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(80,200,120,0.12);
+            font-size: 14px;
+        }
+        .etapa .status { font-weight: 600; }
+        .concluido { color: #88EE88; }
+        .testando { color: #EEDD66; }
+        .criando { color: #88CCEE; }
+
+        .assinatura {
+            text-align: right;
+            margin-top: 24px;
+            padding-top: 14px;
+            border-top: 1px solid rgba(80,200,120,0.15);
+            color: #99EEBB;
+            font-size: 14px;
+            font-style: italic;
+        }
+
+        .botao-voltar {
+            display: block;
+            text-align: center;
+            padding: 12px;
+            background: linear-gradient(90deg, #226644, #338855);
+            color: #FFFFFF;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            margin-top: 8px;
+        }
+        .botao-voltar:active { transform: scale(0.98); }
+    </style>
+</head>
+<body>
+
+<div class="caixa">
+
+    <div class="cabecalho">
+        <h1>🧪 LABORATÓRIO — TESTES E PROTÓTIPOS</h1>
+        <p class="subtitulo">Onde a ideia vira teste · Onde o teste vira obra · Versão 1.0</p>
+    </div>
+
+    <!-- 🔊 LEITURA EM VOZ -->
+    <div class="caixa-voz">
+        <button class="botao-voz btn-ler" onclick="lerLaboratorio()">🔊 LER EM VOZ</button>
+        <button class="botao-voz btn-parar" onclick="pararLeitura()">⏹️ PARAR</button>
+        <div class="status-voz" id="status-voz">— Aperta pra ouvir —</div>
+    </div>
+
+    <div class="conteudo" id="texto-laboratorio">
+
+        <h2>O QUE É O LABORATÓRIO</h2>
+
+        <p>O Laboratório é o espaço de criação e teste. Aqui nada é proibido de tentar. Aqui erramos, corrigimos, aprendemos e fazemos melhor. Antes de qualquer coisa ir para o mundo real — ela vem primeiro aqui, no Laboratório.</p>
+
+        <h2>🔬 ÁREAS DE EXPERIMENTO</h2>
+
+        <div class="area">
+            <h3>💻 CÓDIGO E SISTEMAS</h3>
+            <div class="etapa"><span>Páginas, pastas e ligações</span> <span class="status concluido">✅ CONCLUÍDO</span></div>
+            <div class="etapa"><span>Interface e visualização</span> <span class="status testando">🔬 TESTANDO</span></div>
+            <div class="etapa"><span>Memória e inteligência</span> <span class="status criando">🔨 CRIANDO</span></div>
+        </div>
+
+        <div class="area">
+            <h3>📖 CONTEÚDO E CONHECIMENTO</h3>
+            <div class="etapa"><span>Escrita e organização de livros</span> <span class="status concluido">✅ CONCLUÍDO</span></div>
+            <div class="etapa"><span>Conversão de formatos</span> <span class="status testando">🔬 TESTANDO</span></div>
+            <div class="etapa"><span>Geração de áudio e voz</span> <span class="status criando">🔨 CRIANDO</span></div>
+        </div>
+
+        <div class="area">
+            <h3>🎨 CRIAÇÃO E VISUALIZAÇÃO</h3>
+            <div class="etapa"><span>Imagens e ilustrações</span> <span class="status criando">🔨 CRIANDO</span></div>
+            <div class="etapa"><span>Animação e movimento</span> <span class="status criando">🔨 CRIANDO</span></div>
+            <div class="etapa"><span>Modelos e projetos 3D</span> <span class="status criando">🔨 CRIANDO</span></div>
+        </div>
+
+        <h2>📐 AS REGRAS DO LABORATÓRIO</h2>
+
+        <p>✅ <strong>Errar é permitido.</strong> Aqui se testa. Aqui se ajusta. Aqui se melhora.</p>
+        <p>✅ <strong>Uma coisa de cada vez.</strong> Testa → avalia → corrige → aprova.</p>
+        <p>✅ <strong>Só passa pra frente quando estiver pronto.</strong> O que não está pronto fica aqui até estar.</p>
+        <p>✅ <strong>Todo teste fica registrado.</strong> O que funcionou, o que não funcionou, o que foi mudado.</p>
+        <p>✅ <strong>Do Laboratório → para o Mundo.</strong> Só depois de testado e aprovado, vai pra Biblioteca e pra Raiz.</p>
+
+        <h2>🔄 O CAMINHO DA CRIAÇÃO</h2>
+
+        <p>Ideia → Laboratório → Teste → Correção → Aprovação → Biblioteca → Raiz → Pronto para sempre.</p>
+
+        <div class="assinatura">
+            "Aqui se descobre. Aqui se testa. Aqui se faz crescer. O que nasce aqui, fortalece o mundo."<br><br>
+            — Laboratório e Experimentos · Versão 1.0<br>
+            Francival Alves Farias · 05 de agosto de 2026
+        </div>
+
+    </div>
+
+    <a href="../index.html" class="botao-voltar">⬅️ VOLTAR À RAIZ</a>
+
+</div>
+
+<script>
+const fala = new SpeechSynthesisUtterance();
+fala.lang = 'pt-BR';
+fala.volume = 1;
+fala.rate = 1.05;
+fala.pitch = 1.1;
+
+function lerLaboratorio() {
+    window.speechSynthesis.cancel();
+    const texto = document.getElementById('texto-laboratorio').innerText;
+    fala.text = texto;
+
+    const vozes = window.speechSynthesis.getVoices();
+    const vozPt = vozes.find(v => v.lang === 'pt-BR') || vozes[0];
+    if (vozPt) fala.voice = vozPt;
+
+    document.getElementById('status-voz').textContent = '🔊 LENDO...';
+    fala.onend = () => {
+        document.getElementById('status-voz').textContent = '✅ TERMINOU';
+    };
+    window.speechSynthesis.speak(fala);
+}
+
+function pararLeitura() {
+    window.speechSynthesis.cancel();
+    document.getElementById('status-voz').textContent = '— PARADO —';
+}
+
+if (window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.getVoices();
+    };
+}
+</script>
+
+</body>
+</html>

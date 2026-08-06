@@ -3,151 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>🌌 RAIZ — QG Andrômeda</title>
-    <meta name="theme-color" content="#2255FF">
+    <title>🌌 QG ANDRÔMEDA — Centro de Comando</title>
+    <meta name="theme-color" content="#1a3a70">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body {
             min-height: 100vh;
-            background: linear-gradient(180deg, #000510 0%, #0A1A40 50%, #103080 100%);
+            background: 
+                radial-gradient(ellipse at top, #0a1a35 0%, #050d1f 40%, #000510 100%);
             font-family: 'Segoe UI', -apple-system, sans-serif;
             color: #FFFFFF;
-            padding: 14px;
+            overflow-x: hidden;
         }
-        .caixa { max-width: 620px; margin: 0 auto; }
 
+        /* ESTRELAS DE FUNDO — DISCRETAS */
+        .estrelas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .estrela {
+            position: absolute;
+            background: #fff;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: brilho 6s infinite alternate ease-in-out;
+        }
+        @keyframes brilho {
+            0% { opacity: 0.3; }
+            100% { opacity: 0.8; }
+        }
+
+        .caixa {
+            position: relative;
+            z-index: 1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+        }
+
+        /* CABEÇALHO */
         .cabecalho {
             text-align: center;
-            padding: 24px 14px 18px;
+            padding: 20px 10px 14px;
+            border-bottom: 1px solid rgba(80,140,255,0.15);
             margin-bottom: 18px;
-            border-bottom: 2px solid rgba(80,140,255,0.25);
-        }
-        .logo {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background: linear-gradient(135deg, #4488FF, #2266EE);
-            border-radius: 6px;
-            vertical-align: middle;
-            margin-right: 10px;
         }
         h1 {
-            font-size: 28px;
-            display: inline-block;
-            background: linear-gradient(90deg, #88BBFF, #5588FF, #3366FF);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 24px;
+            color: #cce0ff;
+            letter-spacing: 1px;
         }
         .subtitulo {
             font-size: 13px;
-            color: #88AAEE;
-            margin-top: 6px;
+            color: #7799cc;
+            margin-top: 4px;
         }
 
-        .status {
-            background: rgba(40,80,160,0.15);
-            border: 1px solid rgba(80,140,255,0.25);
-            border-radius: 12px;
-            padding: 14px 16px;
-            margin-bottom: 20px;
+        /* ANDRÔMEDA — CENTRO */
+        .centro {
+            text-align: center;
+            padding: 10px 0 20px;
+        }
+        .simbolo-andromeda {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto;
+            background: radial-gradient(circle, #4488ff, #1a44aa);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            box-shadow: 0 0 30px rgba(80,140,255,0.35);
+        }
+        .status-andromeda {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #88bbff;
+        }
+        .ponto {
+            display: inline-block;
+            width: 8px; height: 8px;
+            background: #33ff88;
+            border-radius: 50%;
+            margin-right: 6px;
+            animation: pulso 2s infinite;
+        }
+        @keyframes pulso {
+            0%,100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* GRID DE BOTÕES — LIMPO, 2 COLUNAS */
+        .grade {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 6px;
-            font-size: 14px;
+            gap: 10px;
+            max-width: 520px;
+            margin: 0 auto;
+            padding-bottom: 30px;
         }
-        .status span { color: #AACCFF; }
-
-        .categoria {
-            margin: 24px 0 10px 0;
-            padding-left: 8px;
-            border-left: 3px solid;
-            font-size: 15px;
-            font-weight: 600;
-            padding-bottom: 4px;
-        }
-        .cat-fundacao { border-color: #6699FF; color: #99BBFF; }
-        .cat-nucleo { border-color: #9977EE; color: #BB99FF; }
-        .cat-conhecimento { border-color: #DD9955; color: #FFBB77; }
 
         .botao {
-            display: block;
-            text-decoration: none;
-            padding: 14px 16px;
-            margin: 8px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 10px;
+            background: rgba(30, 60, 120, 0.18);
+            border: 1px solid rgba(80, 140, 255, 0.2);
             border-radius: 12px;
-            font-size: 15px;
+            text-decoration: none;
+            color: #e0ebff;
+            font-size: 14px;
             font-weight: 500;
-            transition: transform 0.15s, opacity 0.15s;
-            border-left: 4px solid transparent;
+            transition: all 0.2s ease;
         }
-        .botao:active { transform: scale(0.98); }
-        .botao:hover { opacity: 0.95; }
+        .botao:active { transform: scale(0.97); }
+        .botao:hover {
+            background: rgba(40, 80, 150, 0.25);
+            border-color: rgba(100, 160, 255, 0.35);
+        }
+        .icone { font-size: 22px; margin-bottom: 6px; }
+        .nome { text-align: center; line-height: 1.3; }
 
-        .b0 { background: linear-gradient(90deg, #1144AA, #2266DD); border-left-color: #6699FF; color: #FFFFFF; }
-        .b1 { background: linear-gradient(90deg, #5533AA, #7744DD); border-left-color: #9977FF; color: #FFFFFF; }
-        .b2 { background: linear-gradient(90deg, #885522, #AA7733); border-left-color: #DD9944; color: #FFFFFF; }
-
+        /* RODAPÉ */
         .rodape {
+            margin-top: auto;
             text-align: center;
-            margin-top: 30px;
-            padding-top: 16px;
-            border-top: 1px solid rgba(80,140,255,0.15);
-            font-size: 12px;
-            color: #6688BB;
+            padding: 14px;
+            font-size: 11px;
+            color: #5577aa;
+            border-top: 1px solid rgba(80,140,255,0.1);
+        }
+
+        /* AJUSTE PARA TELAS PEQUENAS */
+        @media (max-width: 360px) {
+            .grade { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+<!-- ESTRELAS DE FUNDO -->
+<div class="estrelas" id="estrelas"></div>
+
 <div class="caixa">
 
     <div class="cabecalho">
-        <span class="logo"></span>
-        <h1>RAIZ — QG ANDRÔMEDA</h1>
-        <p class="subtitulo">Portal Principal · Ponto de Partida · Versão 1.1</p>
+        <h1>🌌 QG ANDRÔMEDA</h1>
+        <p class="subtitulo">Centro de Comando · Plataforma Inteligente</p>
     </div>
 
-    <div class="status">
-        <div><span>Versão:</span> 1.1</div>
-        <div><span>Status:</span> 🚧 Em Construção</div>
-        <div><span>Atualização:</span> 06/08/2026</div>
-        <div><span>Módulos:</span> 07 organizados</div>
+    <!-- SÍMBOLO E STATUS DA ANDRÔMEDA -->
+    <div class="centro">
+        <div class="simbolo-andromeda">A</div>
+        <div class="status-andromeda">
+            <span class="ponto"></span>Andrômeda Online · Aguardando
+        </div>
     </div>
 
-    <!-- ============================================== -->
-    <!-- 🏛️ FUNDAÇÃO -->
-    <!-- ============================================== -->
-    <div class="categoria cat-fundacao">🏛️ FUNDAÇÃO — Leis e Planta do Sistema</div>
+    <!-- 8 BOTÕES — TODOS COM FUNÇÃO REAL -->
+    <div class="grade">
 
-    <a href="01-MANIFESTO/manifesto.html" class="botao b0">💙 01 · MANIFESTO — Identidade e Propósito</a>
-    <a href="02-CONSTITUICAO/constituicao-andromeda-v1.0.html" class="botao b0">⚖️ 02 · CONSTITUIÇÃO — Lei Maior do Sistema</a>
-    <a href="03-ARQUITETURA-DA-RAIZ/mapa-geral.html" class="botao b0">🗺️ 03 · ARQUITETURA DA RAIZ — Mapa Geral</a>
+        <a href="inicio.html" class="botao">
+            <span class="icone">🏠</span>
+            <span class="nome">Início</span>
+        </a>
 
-    <!-- ============================================== -->
-    <!-- 🧠 NÚCLEO E COMANDO -->
-    <!-- ============================================== -->
-    <div class="categoria cat-nucleo">🧠 NÚCLEO E COMANDO — Cérebro e Interface</div>
+        <a href="biblioteca.html" class="botao">
+            <span class="icone">📚</span>
+            <span class="nome">Biblioteca</span>
+        </a>
 
-    <a href="04-NÚCLEO-ANDRÔMEDA/cerebro-e-memoria.html" class="botao b1">🧠 04 · NÚCLEO ANDRÔMEDA — Cérebro e Memória</a>
-    <a href="05-CENTRO-DE-COMANDO/painel-principal.html" class="botao b1">🎛️ 05 · CENTRO DE COMANDO — Painel Principal</a>
+        <a href="laboratorio.html" class="botao">
+            <span class="icone">🧪</span>
+            <span class="nome">Laboratório</span>
+        </a>
 
-    <!-- ============================================== -->
-    <!-- 📚 CONHECIMENTO -->
-    <!-- ============================================== -->
-    <div class="categoria cat-conhecimento">📚 CONHECIMENTO — Acervo e Experimentos</div>
+        <a href="agentes.html" class="botao">
+            <span class="icone">🤖</span>
+            <span class="nome">Agentes</span>
+        </a>
 
-    <a href="06-BIBLIOTECA-E-DEPOSITO-GERAL/conhecimento-e-acervo.html" class="botao b2">📖 06 · BIBLIOTECA E DEPÓSITO-GERAL — Conhecimento e Acervo</a>
-    <a href="07-LABORATÓRIO-E-EXPERIMENTOS/testes-e-prototipos.html" class="botao b2">🔬 07 · LABORATÓRIO E EXPERIMENTOS — Testes e Protótipos</a>
+        <a href="missoes.html" class="botao">
+            <span class="icone">📋</span>
+            <span class="nome">Missões</span>
+        </a>
 
-    <!-- ============================================== -->
-    <!-- RODAPÉ -->
-    <!-- ============================================== -->
+        <a href="memoria.html" class="botao">
+            <span class="icone">🧠</span>
+            <span class="nome">Memória</span>
+        </a>
+
+        <a href="ferramentas.html" class="botao">
+            <span class="icone">🛠️</span>
+            <span class="nome">Ferramentas</span>
+        </a>
+
+        <a href="configuracoes.html" class="botao">
+            <span class="icone">⚙️</span>
+            <span class="nome">Configurações</span>
+        </a>
+
+    </div>
+
     <div class="rodape">
-        🌌 RAIZ — QG Andrômeda · Versão 1.1 · 06 de Agosto de 2026<br>
-        Francival Alves Farias · Todos os Direitos Reservados
+        QG Andrômeda · Centro de Comando · Versão 2.0 · 06/08/2026
     </div>
 
 </div>
+
+<script>
+// GERA ESTRELAS DE FORMA DISCRETA
+const container = document.getElementById('estrelas');
+for (let i = 0; i < 60; i++) {
+    const s = document.createElement('div');
+    s.className = 'estrela';
+    s.style.left = Math.random()*100 + '%';
+    s.style.top = Math.random()*100 + '%';
+    s.style.width = s.style.height = (Math.random()*2 + 1) + 'px';
+    s.style.animationDelay = (Math.random()*6) + 's';
+    container.appendChild(s);
+}
+</script>
 
 </body>
 </html>
